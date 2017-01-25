@@ -1,0 +1,18 @@
+<div id="leo_block_top" class="popup-over leo-block-group dropdown js-dropdown float-xs-left float-md-right">
+    <a href="javascript:void(0)" title="Setting" class="popup-title" data-toggle="dropdown">
+        <i class="icon ti-menu"></i>
+    </a>
+    <div class="dropdown-menu popup-content">
+        <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 col-sp-12 left-block">
+                {{ render(controller('sylius.controller.shop.locale_switch:renderAction')) }}
+
+                {{ render(controller('sylius.controller.shop.currency_switch:renderAction')) }}
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 col-sp-12 right-block">
+                {% include '@SyliusShop/Homepage/Menu/_security.html.twig' %}
+            </div>
+            {{ render(url('sylius_shop_partial_cart_summary', {'template': '@SyliusShop/Cart/_widget.html.twig'})) }}
+        </div>
+    </div>
+</div>

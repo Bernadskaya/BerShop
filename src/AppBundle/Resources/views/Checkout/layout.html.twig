@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+
+<html lang="{{ app.request.locale }}">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>{% block title %}Ber{% endblock %}</title>
+
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    {% block metatags %}
+    {% endblock %}
+
+    {% block stylesheets %}
+        {% stylesheets 'bundles/app/css/*' filter='cssrewrite' %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+        {% endstylesheets %}
+        {% include '@SyliusUi/_stylesheets.html.twig' with {'path': 'assets/shop/css/style.css'} %}
+    {% endblock %}
+    <script type="text/javascript">
+        var LEO_COOKIE_THEME = "LEO_LEBLANC_PANEL_CONFIG";
+        var prestashop = {"currency":{"name":"US Dollar","iso_code":"USD","iso_code_num":"840","sign":"$"},"customer":{"lastname":null,"firstname":null,"email":null,"last_passwd_gen":null,"birthday":null,"newsletter":null,"newsletter_date_add":null,"ip_registration_newsletter":null,"optin":null,"website":null,"company":null,"siret":null,"ape":null,"outstanding_allow_amount":0,"max_payment_days":0,"note":null,"is_guest":0,"id_shop":null,"id_shop_group":null,"id_default_group":1,"date_add":null,"date_upd":null,"reset_password_token":null,"reset_password_validity":null,"id":null,"is_logged":false,"gender":{"type":null,"name":null,"id":null},"risk":{"name":null,"color":null,"percent":null,"id":null},"addresses":[]},"language":{"name":"English (English)","iso_code":"en","locale":"en-US","language_code":"en-us","is_rtl":"0","date_format_lite":"m\/d\/Y","date_format_full":"m\/d\/Y H:i:s","id":1},"page":{"title":"","canonical":null,"meta":{"title":"demo","description":"Shop powered by PrestaShop","keywords":"","robots":"index"},"page_name":"index","body_classes":{"lang-en":true,"lang-rtl":false,"country-US":true,"currency-USD":true,"layout-full-width":true,"page-index":true,"tax-display-enabled":true},"admin_notifications":[]},"shop":{"name":"demo","email":"demo@demo.com","registration_number":"","long":false,"lat":false,"logo":"\/prestashop\/leo_leblanc_demo\/img\/leoleblanc-logo-1479119424.jpg","stores_icon":"\/prestashop\/leo_leblanc_demo\/img\/logo_stores.png","favicon":"\/prestashop\/leo_leblanc_demo\/img\/favicon.ico","favicon_update_time":"1479119424","address":{"formatted":"demo<br>138 Tran Binh, My Dinh, Nam Tu Liem<br>Ha Noi<br>Vietnam","address1":"138 Tran Binh, My Dinh, Nam Tu Liem","address2":"","postcode":"","city":"Ha Noi","state":null,"country":"Vietnam"},"phone":"0123.456.789","fax":"0123.456.789"},"urls":{"base_url":"http:\/\/demo4leotheme.com\/prestashop\/leo_leblanc_demo\/","current_url":"http:\/\/demo4leotheme.com\/prestashop\/leo_leblanc_demo\/en\/?id_appagebuilder_profiles=5&header=1","shop_domain_url":"http:\/\/demo4leotheme.com","img_ps_url":"http:\/\/demo4leotheme.com\/prestashop\/leo_leblanc_demo\/img\/","img_cat_url":"http:\/\/demo4leotheme.com\/prestashop\/leo_leblanc_demo\/img\/c\/","img_lang_url":"http:\/\/demo4leotheme.com\/prestashop\/leo_leblanc_demo\/img\/l\/","img_prod_url":"http:\/\/demo4leotheme.com\/prestashop\/leo_leblanc_demo\/img\/p\/","img_manu_url":"http:\/\/demo4leotheme.com\/prestashop\/leo_leblanc_demo\/img\/m\/","img_sup_url":"http:\/\/demo4leotheme.com\/prestashop\/leo_leblanc_demo\/img\/su\/","img_ship_url":"http:\/\/demo4leotheme.com\/prestashop\/leo_leblanc_demo\/img\/s\/","img_store_url":"http:\/\/demo4leotheme.com\/prestashop\/leo_leblanc_demo\/img\/st\/","img_col_url":"http:\/\/demo4leotheme.com\/prestashop\/leo_leblanc_demo\/img\/co\/","img_url":"http:\/\/demo4leotheme.com\/prestashop\/leo_leblanc_demo\/themes\/leo_leblanc\/assets\/img\/","css_url":"http:\/\/demo4leotheme.com\/prestashop\/leo_leblanc_demo\/themes\/leo_leblanc\/assets\/css\/","js_url":"http:\/\/demo4leotheme.com\/prestashop\/leo_leblanc_demo\/themes\/leo_leblanc\/assets\/js\/","pic_url":"http:\/\/demo4leotheme.com\/prestashop\/leo_leblanc_demo\/upload\/","pages":{"address":"http:\/\/demo4leotheme.com\/prestashop\/leo_leblanc_demo\/en\/address","addresses":"http:\/\/demo4leotheme.com\/prestashop\/leo_leblanc_demo\/en\/addresses","authentication":"http:\/\/demo4leotheme.com\/prestashop\/leo_leblanc_demo\/en\/login","cart":"http:\/\/demo4leotheme.com\/prestashop\/leo_leblanc_demo\/en\/cart","category":"http:\/\/demo4leotheme.com\/prestashop\/leo_leblanc_demo\/en\/index.php?controller=category","cms":"http:\/\/demo4leotheme.com\/prestashop\/leo_leblanc_demo\/en\/index.php?controller=cms","contact":"http:\/\/demo4leotheme.com\/prestashop\/leo_leblanc_demo\/en\/contact-us","discount":"http:\/\/demo4leotheme.com\/prestashop\/leo_leblanc_demo\/en\/discount","guest_tracking":"http:\/\/demo4leotheme.com\/prestashop\/leo_leblanc_demo\/en\/guest-tracking","history":"http:\/\/demo4leotheme.com\/prestashop\/leo_leblanc_demo\/en\/order-history","identity":"http:\/\/demo4leotheme.com\/prestashop\/leo_leblanc_demo\/en\/identity","index":"http:\/\/demo4leotheme.com\/prestashop\/leo_leblanc_demo\/en\/","my_account":"http:\/\/demo4leotheme.com\/prestashop\/leo_leblanc_demo\/en\/my-account","order_confirmation":"http:\/\/demo4leotheme.com\/prestashop\/leo_leblanc_demo\/en\/order-confirmation","order_detail":"http:\/\/demo4leotheme.com\/prestashop\/leo_leblanc_demo\/en\/index.php?controller=order-detail","order_follow":"http:\/\/demo4leotheme.com\/prestashop\/leo_leblanc_demo\/en\/order-follow","order":"http:\/\/demo4leotheme.com\/prestashop\/leo_leblanc_demo\/en\/order","order_return":"http:\/\/demo4leotheme.com\/prestashop\/leo_leblanc_demo\/en\/index.php?controller=order-return","order_slip":"http:\/\/demo4leotheme.com\/prestashop\/leo_leblanc_demo\/en\/credit-slip","pagenotfound":"http:\/\/demo4leotheme.com\/prestashop\/leo_leblanc_demo\/en\/page-not-found","password":"http:\/\/demo4leotheme.com\/prestashop\/leo_leblanc_demo\/en\/password-recovery","pdf_invoice":"http:\/\/demo4leotheme.com\/prestashop\/leo_leblanc_demo\/en\/index.php?controller=pdf-invoice","pdf_order_return":"http:\/\/demo4leotheme.com\/prestashop\/leo_leblanc_demo\/en\/index.php?controller=pdf-order-return","pdf_order_slip":"http:\/\/demo4leotheme.com\/prestashop\/leo_leblanc_demo\/en\/index.php?controller=pdf-order-slip","prices_drop":"http:\/\/demo4leotheme.com\/prestashop\/leo_leblanc_demo\/en\/prices-drop","product":"http:\/\/demo4leotheme.com\/prestashop\/leo_leblanc_demo\/en\/index.php?controller=product","search":"http:\/\/demo4leotheme.com\/prestashop\/leo_leblanc_demo\/en\/search","sitemap":"http:\/\/demo4leotheme.com\/prestashop\/leo_leblanc_demo\/en\/sitemap","stores":"http:\/\/demo4leotheme.com\/prestashop\/leo_leblanc_demo\/en\/stores","supplier":"http:\/\/demo4leotheme.com\/prestashop\/leo_leblanc_demo\/en\/supplier","register":"http:\/\/demo4leotheme.com\/prestashop\/leo_leblanc_demo\/en\/login?create_account=1","order_login":"http:\/\/demo4leotheme.com\/prestashop\/leo_leblanc_demo\/en\/order?login=1"},"theme_assets":"\/prestashop\/leo_leblanc_demo\/themes\/leo_leblanc\/assets\/","actions":{"logout":"http:\/\/demo4leotheme.com\/prestashop\/leo_leblanc_demo\/en\/?mylogout="}},"configuration":{"display_taxes_label":true,"low_quantity_threshold":3,"is_b2b":false,"is_catalog":false,"show_prices":true,"opt_in":{"partner":true},"quantity_discount":{"type":"discount","label":"Discount"},"voucher_enabled":0,"return_enabled":0,"number_of_days_for_return":14},"field_required":[],"breadcrumb":{"links":[{"title":"Home","url":"http:\/\/demo4leotheme.com\/prestashop\/leo_leblanc_demo\/en\/"}],"count":1},"link":{"protocol_link":"http:\/\/","protocol_content":"http:\/\/"},"time":1484149534,"static_token":"079962e2a9e2e861af4d7a4f1833a7d5","token":"32d487b01d9c52bf02077cb4e570f5c2"};
+    </script>
+    <script type="text/javascript">
+
+        var FancyboxI18nClose = "Close";
+        var FancyboxI18nNext = "Next";
+        var FancyboxI18nPrev = "Previous";
+        var current_link = "http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/";
+        var currentURL = window.location;
+        currentURL = String(currentURL);
+        currentURL = currentURL.replace("https://","").replace("http://","").replace("www.","").replace( /#\w*/, "" );
+        current_link = current_link.replace("https://","").replace("http://","").replace("www.","");
+        var text_warning_select_txt = "Please select One to remove?";
+        var text_confirm_remove_txt = "Are you sure to remove footer row?";
+        var close_bt_txt = "Close";
+        var list_menu = [];
+        var list_menu_tmp = {};
+        var isHomeMenu = 0;
+    </script>
+    <script>
+        /**
+         * List functions will run when document.ready()
+         */
+        var ap_list_functions = [];
+        /**
+         * List functions will run when window.load()
+         */
+        var ap_list_functions_loaded = [];
+
+        /**
+         * List functions will run when document.ready() for theme
+         */
+
+        var products_list_functions = [];
+    </script>
+    <script type="text/javascript">
+        var leoOption = {
+            category_qty:1,
+            product_list_image:0,
+            product_one_img:1,
+            productCdown: 1,
+            productColor: 0,
+            homeWidth: 450,
+            homeheight: 567,
+        }
+
+        ap_list_functions.push(function(){
+            if (typeof $.LeoCustomAjax !== "undefined" && $.isFunction($.LeoCustomAjax)) {
+                var leoCustomAjax = new $.LeoCustomAjax();
+                leoCustomAjax.processAjax();
+            }
+        });
+    </script>
+    <style type="text/css">.fancybox-margin{margin-right:0px;}</style>
+    <style type="text/css">.fancybox-margin{margin-right:0px;}</style>
+    <style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
+        .en-markup-crop-options {
+            top: 18px !important;
+            left: 50% !important;
+            margin-left: -100px !important;
+            width: 200px !important;
+            border: 2px rgba(255,255,255,.38) solid !important;
+            border-radius: 4px !important;
+        }
+        .en-markup-crop-options div div:first-of-type {
+            margin-left: 0px !important;
+        }
+    </style>
+
+</head>
+<body {% block id %}{% endblock %}>
+<main id="main">
+<header id="header">
+
+    <div class="header-container">
+
+    <nav class="header-nav">
+        <div class="topnav">
+            <div class="inner"></div>
+        </div>
+        <div class="bottomnav">
+            <div class="inner"></div>
+        </div>
+    </nav>
+    {#start theme header#}
+
+    <div class="header-top">
+        <div class="inner">
+            <!-- @file modules\appagebuilder\views\templates\hook\ApRow -->
+            <div class="row box-top-header ApRow  has-bg bg-boxed" data-bg=" no-repeat" style="background: no-repeat;">
+                <!-- @file modules\appagebuilder\views\templates\hook\ApColumn -->
+                <div    class="col-xl-2-4 col-lg-2 col-md-12 col-sm-12 col-xs-12 col-sp-12 group-left-header ApColumn">
+                    <!-- Logo -->
+                    <a href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/" title="demo"><img class="logo img-fluid" src="/prestashop/leo_leblanc_demo/img/leoleblanc-logo-1479119424.jpg" alt="demo"/></a>
+                </div>
+                <!-- Taxon Menu -->
+                <div    class="col-xl-7-2 col-lg-8 col-md-6 col-sm-6 col-xs-3 col-sp-3 group-center-header ApColumn ">
+                    {{ render(url('sylius_shop_partial_taxon_index_by_code', {'code': 'category', 'template': '@SyliusShop/Taxon/_horizontalMenu.html.twig'})) }}
+                </div>
+                <div    class="col-xl-2-4 col-lg-2 col-md-6 col-sm-6 col-xs-9 col-sp-9 group-right-header position-static ApColumn ">
+                    {{ render(url('sylius_shop_partial_cart_summary', {'template': '@SyliusShop/Cart/_widget.html.twig'})) }}
+                    {% include '@SyliusShop/Homepage/_header.html.twig' %}
+                </div>
+            </div>
+            </div>
+    </div>
+    </div>
+</header>
+
+{% include '@SyliusUi/_flashes.html.twig' %}
+<section id="wrapper">
+    {% block content %}
+    {% endblock %}
+</section>
+{% block javascripts %}
+{% include '@SyliusUi/_javascripts.html.twig' with {'path': 'assets/shop/js/app.js'} %}
+    {% javascripts
+    '@AppBundle/Resources/public/js/theme.js'
+    output='js/compiled/app.js' %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+
+{% endblock %}
+</main>
+
+{% include '@SyliusUi/Modal/_confirmation.html.twig' %}
+</body>
+</html>

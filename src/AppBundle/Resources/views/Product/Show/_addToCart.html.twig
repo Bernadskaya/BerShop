@@ -1,0 +1,48 @@
+{% set product = order_item.variant.product %}
+
+{% form_theme form 'SyliusUiBundle:Form:theme.html.twig' %}
+
+{{ form_start(form, {'action': path('sylius_shop_ajax_cart_add_item', {'productId': product.id}), 'attr': {'id': 'sylius-product-adding-to-cart', 'class': 'ui loadable form', 'novalidate': 'novalidate', 'data-redirect': path('sylius_shop_cart_summary')}}) }}
+{{ form_errors(form) }}
+<div class="ui red label bottom pointing hidden sylius-validation-error" id="sylius-cart-validation-error"></div>
+{% if not product.simple %}
+        {% if product.variantSelectionMethodChoice %}
+            {% include '@SyliusShop/Product/Show/_variants.html.twig' %}
+        {% else %}
+                {% include '@SyliusShop/Product/Show/_options.html.twig' %}
+        {% endif %}
+{% endif %}
+    {{ form_row(form.cartItem.quantity) }}
+<div class="add">
+    <button class="btn btn-primary add-to-cart"  type="submit">
+        <i class="icon ti-shopping-cart shopping-cart"></i>
+        {{ 'sylius.ui.add_to_cart'|trans }}
+    </button>
+    <span id="product-availability"> </span>
+</div>
+{{ form_row(form._token) }}
+{{ form_end(form, {'render_rest': false}) }}
+
+
+
+
+
+
+{#<div class="product-variants">#}
+    {#<div class="clearfix product-variants-item">#}
+        {#<span class="control-label">Size</span>#}
+        {#<ul id="group_1">#}
+            {#<li class="input-container float-xs-left">#}
+                {#<input class="input-radio" type="radio" data-product-attribute="1" name="group[1]" value="1" checked="checked">#}
+                {#<span class="radio-label">S</span>#}
+            {#</li>#}
+            {#<li class="input-container float-xs-left">#}
+                {#<input class="input-radio" type="radio" data-product-attribute="1" name="group[1]" value="2">#}
+                {#<span class="radio-label">M</span>#}
+            {#</li>#}
+            {#<li class="input-container float-xs-left">#}
+                {#<input class="input-radio" type="radio" data-product-attribute="1" name="group[1]" value="3">#}
+                {#<span class="radio-label">L</span>#}
+            {#</li>#}
+        {#</ul>#}
+    {#</div>#}

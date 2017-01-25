@@ -1,0 +1,16 @@
+{% import "@SyliusShop/Common/Macro/money.html.twig" as money %}
+{#вытащить значения для мета-тэгов, добавить переводы#}
+
+<div class="product-prices">
+    <div class="product-price h5 " itemprop="offers" itemscope="" itemtype="https://schema.org/Offer">
+        <link itemprop="availability" href="https://schema.org/InStock">
+        <meta itemprop="priceCurrency" content="USD">
+        <div class="current-price">
+            <span itemprop="price" content="26.99">{{ money.calculatePrice(product|sylius_resolve_variant) }}</span>
+        </div>
+    </div>
+
+    <div class="tax-shipping-delivery-label">
+        Tax excluded
+    </div>
+</div>

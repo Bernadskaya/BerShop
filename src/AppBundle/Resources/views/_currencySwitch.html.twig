@@ -1,0 +1,21 @@
+{% if currencies|length > 1 %}
+    <div class="currency-selector">
+        <span class="title">Currency:</span>
+        {% for code in currencies %}
+            {% if code is not same as(active) %}
+                <li>
+                    <a title="{{ code }}" rel="nofollow" href="{{ path('sylius_shop_switch_currency', {'code': code}) }}" class="dropdown-item">
+                        {{ code }}
+                    </a>
+                </li>
+            {% else %}
+                <li  class="current" >
+                    <a title="{{ code }}" rel="nofollow" href="{{ path('sylius_shop_switch_currency', {'code': code}) }}" class="dropdown-item">
+                        {{ code }}
+                    </a>
+                </li>
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endif %}
+

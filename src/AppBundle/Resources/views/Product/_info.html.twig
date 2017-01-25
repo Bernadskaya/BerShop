@@ -1,0 +1,22 @@
+{% set product = variant.product %}
+
+
+{#{% include '@SyliusShop/Product/_mainImage.html.twig' with {'product': product, 'filter': 'sylius_shop_product_tiny_thumbnail'} %}#}
+{#{{ variant.code }}#}
+<div class="productki9 .lo-line-info">
+    <a class="label" href="{{ path('sylius_shop_product_show', {'slug': product.slug}) }}">{{ product.name }}</a>
+</div>
+
+{% if product.hasOptions() %}
+        {% for optionValue in variant.optionValues %}
+            <div class="product-line-info">
+                <span class="label">{{ optionValue.name }}</span>
+                <span class="value">{{ optionValue.value }}</span>
+            </div>
+        {% endfor %}
+{% elseif variant.name is not null %}
+        <div class="item sylius-product-variant-name">
+            {{ variant.name }}
+        </div>
+
+{% endif %}

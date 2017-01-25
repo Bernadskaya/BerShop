@@ -1,0 +1,33 @@
+<div class="cart-overview js-cart">
+    {{ form_start(form, {'action': path('sylius_shop_cart_save'), 'attr': {'class': 'ui loadable form', 'novalidate': 'novalidate'}}) }}
+    {{ form_errors(form) }}
+    <ul class="cart-items">
+        {% for item in cart.items %}
+            <li class="cart-item">
+                <div class="product-line-grid row">
+
+                    {% include '@SyliusShop/Cart/Summary/_item.html.twig' with {'item': item, 'form': form.items[loop.index0]} %}
+
+                    <div class="clearfix"></div>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+    <div>
+        <div class="content">
+            {#<div class="form-group row ">#}
+                {#{% if form.promotionCoupon is defined %}#}
+                    {#{% include '@SyliusShop/Cart/Summary/_coupon.html.twig' with {'form': form.promotionCoupon} %}#}
+                {#{% endif %}#}
+            {#</div>#}
+            <hr>
+            <div class="card-block">
+                <div class="text-xs-center">
+                {% include '@SyliusShop/Cart/Summary/_update.html.twig' %}
+                </div>
+            </div>
+        </div>
+    </div>
+    {{ form_row(form._token) }}
+    {{ form_end(form, {'render_rest': false}) }}
+</div>

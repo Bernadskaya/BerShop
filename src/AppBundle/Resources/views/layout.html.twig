@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+
+<html lang="{{ app.request.locale }}">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>{% block title %}Ber{% endblock %}</title>
+
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    {% block metatags %}
+    {% endblock %}
+
+    {% block stylesheets %}
+        {% stylesheets 'bundles/app/css/*' filter='cssrewrite' %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+        {% endstylesheets %}
+    {% endblock %}
+    <script>
+        /**
+         * List functions will run when document.ready()
+         */
+        var ap_list_functions = [];
+        /**
+         * List functions will run when window.load()
+         */
+        var ap_list_functions_loaded = [];
+        /**
+         * List functions will run when document.ready() for theme
+         */
+        var products_list_functions = [];
+    </script>
+    <script type="text/javascript">
+        var leoOption = {
+            category_qty:1,
+            product_list_image:0,
+            product_one_img:1,
+            productCdown: 1,
+            productColor: 0,
+            homeWidth: 450,
+            homeheight: 567,
+        }
+        ap_list_functions.push(function(){
+            if (typeof $.LeoCustomAjax !== "undefined" && $.isFunction($.LeoCustomAjax)) {
+                var leoCustomAjax = new $.LeoCustomAjax();
+                leoCustomAjax.processAjax();
+            }
+        });
+    </script>
+
+</head>
+
+<body {% block id %}{% endblock %}>
+<main id="page">
+
+<header id="header">
+    <nav class="header-nav">
+        <div class="topnav">
+            <div class="inner"></div>
+        </div>
+        <div class="bottomnav">
+            <div class="inner"></div>
+        </div>
+    </nav>
+    {#start theme header#}
+    <div class="header-top">
+        <div class="inner">
+            <!-- @file modules\appagebuilder\views\templates\hook\ApRow -->
+            <div class="row box-top-header ApRow  has-bg bg-boxed" data-bg=" no-repeat" style="background: no-repeat;">
+                <!-- @file modules\appagebuilder\views\templates\hook\ApColumn -->
+                <div class="col-xl-2-4 col-lg-2 col-md-12 col-sm-12 col-xs-12 col-sp-12 group-left-header ApColumn">
+                    <!-- Logo -->
+                    <a href="{{ path('sylius_shop_homepage') }}" title="Ber">
+                        {% image 'bundles/app/images/logo_ber.jpg' %}
+                        <img src="{{ asset_url }}" alt="Ber Cashmere Knitwear" class="logo img-fluid" />
+                        {% endimage %}
+                    </a>
+                </div>
+                <!-- Taxon Menu -->
+                <div class="col-xl-7-2 col-lg-8 col-md-6 col-sm-6 col-xs-3 col-sp-3 group-center-header ApColumn ">
+                    {{ render(url('sylius_shop_partial_taxon_index_by_code', {'code': 'category', 'template': '@SyliusShop/Taxon/_horizontalMenu.html.twig'})) }}
+                </div>
+                <div    class="col-xl-2-4 col-lg-2 col-md-6 col-sm-6 col-xs-9 col-sp-9 group-right-header position-static ApColumn ">
+                    <div id="search_widget" class="search-widget" data-search-controller-url="#">
+                        <i id="click_show_search" class="icon ti-search" title="Search"></i>
+                        <form method="get" class="form-search" action="#">
+                            <input type="hidden" name="controller" value="search">
+                            <input type="text" name="s" value="" class="search_query" placeholder="Search our catalog">
+                            <button type="submit" class="search-button">
+                                <i class="icon ti-search"></i>
+                            </button>
+                        </form>
+                    </div>
+                    {{ render(url('sylius_shop_partial_cart_summary', {'template': '@SyliusShop/Cart/_widget.html.twig'})) }}
+                    {% include '@SyliusShop/Homepage/_header.html.twig' %}
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+{% include '@SyliusUi/_flashes.html.twig' %}
+<section id="wrapper">
+    {% block content %}
+    {% endblock %}
+</section>
+{% block footer %}
+    {% include '@SyliusShop/Homepage/_footer.html.twig' %}
+{% endblock %}
+
+{% block javascripts %}
+    {% include '@SyliusUi/_javascripts.html.twig' with {'path': 'assets/shop/js/app.js'} %}
+    {% javascripts 'bundles/app/js/theme-1.js' %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}
+
+{% include '@SyliusUi/Modal/_confirmation.html.twig' %}
+    </main>
+</body>
+</html>

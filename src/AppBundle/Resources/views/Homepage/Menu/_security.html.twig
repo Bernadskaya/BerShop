@@ -1,0 +1,23 @@
+<div class="user-info">
+    <ul>
+        {% if is_granted('ROLE_USER') %}
+            <li>
+                <a class="dropdown-item"  href="{{ path('sylius_shop_account_dashboard') }}" title="My account" rel="nofollow">
+                    <i class="icon ti-user"></i>{{ 'sylius.ui.my_account'|trans }}</a>
+            </li>
+        {% else %}
+            <li>
+                <a class="dropdown-item" href="{{ path('sylius_shop_login') }}" title="Log in to your customer account" rel="nofollow">
+                    <i class="icon ti-lock"></i> {{ 'sylius.ui.login'|trans }}</a>
+            </li>
+            <li>
+                <a class="dropdown-item" href="{{ path('sylius_shop_register') }}" title="Register" rel="nofollow">
+                    <i class="icon ti-user"></i> {{ 'sylius.ui.register'|trans }}</a>
+            </li>
+        {% endif %}
+        <li>
+            <a class="dropdown-item"  href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/cart" title="Checkout" rel="nofollow">
+                <i class="icon ti-shopping-cart"></i> Checkout</a>
+        </li>
+    </ul>
+</div>

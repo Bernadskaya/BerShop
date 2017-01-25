@@ -1,0 +1,111 @@
+<div class="form-group row ">
+    <label class="col-md-3 form-control-label required">
+        {{ form_label(form.firstName) }}
+    </label>
+    <div class="col-md-6">
+        {{ form_widget(form.firstName,{'attr':{'class':'form-control','name':'email','type':'text'}}) }}
+
+    </div>
+    <div class="col-md-3 form-control-comment">
+        {{ form_errors(form.firstName) }}
+    </div>
+</div>
+<div class="form-group row ">
+    <label class="col-md-3 form-control-label required">
+        {{ form_label(form.lastName) }}
+    </label>
+    <div class="col-md-6">
+        {{ form_widget(form.lastName,{'attr':{'class':'form-control','name':'email','type':'text'}}) }}
+
+    </div>
+    <div class="col-md-3 form-control-comment">
+        {{ form_errors(form.lastName) }}
+    </div>
+</div>
+<div class="form-group row ">
+    <label class="col-md-3 form-control-label required">
+        {{ form_label(form.company) }}
+    </label>
+    <div class="col-md-6">
+        {{ form_widget(form.company,{'attr':{'class':'form-control','name':'email','type':'text'}}) }}
+    </div>
+    <div class="col-md-3 form-control-comment">
+        {{ form_errors(form.company) }}
+    </div>
+</div>
+<div class="form-group row ">
+    <label class="col-md-3 form-control-label required">
+        {{ form_label(form.street) }}
+    </label>
+    <div class="col-md-6">
+        {{ form_widget(form.street,{'attr':{'class':'form-control','name':'email','type':'text'}}) }}
+    </div>
+    <div class="col-md-3 form-control-comment">
+        {{ form_errors(form.street) }}
+    </div>
+</div>
+
+<div class="form-group row" data-url="{{ path('sylius_shop_ajax_render_province_form') }}">
+    {% if form.provinceCode is defined %}
+        <label class="col-md-3 form-control-label required">
+            {{ form_label(form.provinceCode) }}
+        </label>
+        <div class="col-md-6">
+            {{ form_row(form.provinceCode, {'attr': {'class': 'form-control form-control-select js-country'}}) }}
+        </div>
+    {% elseif form.provinceName is defined %}
+        <label class="col-md-3 form-control-label required">
+            {{ form_label(form.provinceName) }}
+        </label>
+    <div class="col-md-6">
+    {{ form_row(form.provinceName, {'attr': {'class': 'form-control form-control-select js-country'}}) }}
+    </div>
+    {% endif %}
+
+    {% if form.provinceCode is defined %}
+        <div class="col-md-3 form-control-comment">
+            {{ form_errors(form) }}
+        </div>
+    {% endif %}
+</div>
+
+<div class="form-group row ">
+{% include '@SyliusShop/Common/Form/_countryCode.html.twig' with {'form': form.countryCode} %}
+</div>
+
+
+<div class="form-group row">
+
+    <label class="col-md-3 form-control-label required">
+        {{ form_label(form.city) }}
+    </label>
+    <div class="col-md-6">
+        {{ form_widget(form.city,{'attr':{'class':'form-control','name':'email','type':'text'}}) }}
+    </div>
+    <div class="col-md-3 form-control-comment">
+        {{ form_errors(form.city) }}
+    </div>
+    </div>
+<div class="form-group row">
+    <label class="col-md-3 form-control-label required">
+        {{ form_label(form.postcode) }}
+    </label>
+    <div class="col-md-6">
+        {{ form_widget(form.postcode,{'attr':{'class':'form-control','name':'email','type':'text'}}) }}
+    </div>
+    <div class="col-md-3 form-control-comment">
+        {{ form_errors(form.postcode) }}
+    </div>
+</div>
+<div class="form-group row">
+
+    <label class="col-md-3 form-control-label required">
+        {{ form_label(form.phoneNumber) }}
+    </label>
+    <div class="col-md-6">
+        {{ form_widget(form.phoneNumber,{'attr':{'class':'form-control','name':'email','type':''}}) }}
+    </div>
+    <div class="col-md-3 form-control-comment">
+        {{ form_errors(form.phoneNumber) }}
+    </div>
+</div>

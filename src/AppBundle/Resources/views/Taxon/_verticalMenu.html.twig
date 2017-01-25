@@ -1,0 +1,939 @@
+<div id="left-column" class="sidebar col-xs-12 col-sm-12 col-md-3">
+<div class="block-categories block block-highlighted hidden-sm-down">
+    <h4 class="title_block"><a href="{{ path('sylius_shop_product_index', {'slug': taxon.name}) }}">{{ taxon.name }}</a></h4>
+    <div class="block_content">
+        <ul class="category-top-menu">
+
+            <li>
+                <ul class="category-sub-menu">
+                    {% for child in taxon.children %}
+                    <li data-depth="0">
+                        <a href="{{ path('sylius_shop_product_index', {'slug': taxon.name}) }}">{{ taxon.name }}<span id="leo-cat-4" style="" class="leo-qty badge">5</span></a>
+                        <div class="navbar-toggler collapse-icons" data-toggle="collapse" data-target="#exCollapsingNavbar4"><i class="fa fa-caret-right add"></i><i class="fa fa-caret-down remove"></i></div>
+                        <div class="collapse" id="exCollapsingNavbar4">
+                            <ul class="category-sub-menu"><li data-depth="1"><a class="category-sub-link" href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/5-tshirts">T-shirts<span id="leo-cat-5" style="" class="leo-qty badge">3</span></a></li>
+                                <li data-depth="1"><a class="category-sub-link" href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/6-top">Tops<span id="leo-cat-6" style="" class="leo-qty badge">3</span></a></li>
+                                <li data-depth="1"><a class="category-sub-link" href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/7-blouses">Blouses<span id="leo-cat-7" style="" class="leo-qty badge">4</span></a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+<div id="search_filters_wrapper" class="hidden-sm-down">
+<div id="search_filter_controls" class="hidden-md-up">
+    <span id="_mobile_search_filters_clear_all"></span>
+    <button class="btn btn-secondary ok">
+        <i class="ti-check"></i>
+        OK
+    </button>
+</div>
+<div id="search_filters" class="block">
+<h4 class="title_block h6 hidden-sm-down">Filter By</h4>
+<div class="block_content">
+<div id="_desktop_search_filters_clear_all" class="hidden-sm-down clear-all-wrapper">
+    <button data-search-url="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc" class="btn btn-tertiary js-search-filters-clear-all">
+        <i class="material-icons"></i>
+        Clear all
+    </button>
+</div>
+<section class="facet ">
+    <h1 class="h6 facet-title hidden-sm-down">Categories</h1>
+    <div class="title hidden-md-up" data-target="#facet_54766" data-toggle="collapse">
+        <h1 class="h6 facet-title">Categories</h1>
+              <span class="float-xs-right">
+                <span class="navbar-toggler collapse-icons">
+                  <i class="material-icons add"></i>
+                  <i class="material-icons remove"></i>
+                </span>
+              </span>
+    </div>
+    <ul id="facet_54766" class="collapse">
+        <li>
+            <label class="facet-label">
+                                                  <span class="custom-checkbox">
+                            <input data-search-url="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Categories-Men" type="checkbox">
+                                                          <span><i class="material-icons checkbox-checked"></i></span>
+                                                      </span>
+
+                <a href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Categories-Men" class="_gray-darker search-link js-search-link" rel="nofollow">
+                    Men
+                    <span class="magnitude">(5)</span>
+                </a>
+            </label>
+        </li>
+        <li>
+            <label class="facet-label">
+                                                  <span class="custom-checkbox">
+                            <input data-search-url="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Categories-Women" type="checkbox">
+                                                          <span><i class="material-icons checkbox-checked"></i></span>
+                                                      </span>
+
+                <a href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Categories-Women" class="_gray-darker search-link js-search-link" rel="nofollow">
+                    Women
+                    <span class="magnitude">(5)</span>
+                </a>
+            </label>
+        </li>
+        <li>
+            <label class="facet-label">
+                                                  <span class="custom-checkbox">
+                            <input data-search-url="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Categories-Kid" type="checkbox">
+                                                          <span><i class="material-icons checkbox-checked"></i></span>
+                                                      </span>
+
+                <a href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Categories-Kid" class="_gray-darker search-link js-search-link" rel="nofollow">
+                    Kid
+                    <span class="magnitude">(4)</span>
+                </a>
+            </label>
+        </li>
+    </ul>
+</section>
+<section class="facet ">
+    <h1 class="h6 facet-title hidden-sm-down">Size</h1>
+    <div class="title hidden-md-up" data-target="#facet_83866" data-toggle="collapse">
+        <h1 class="h6 facet-title">Size</h1>
+              <span class="float-xs-right">
+                <span class="navbar-toggler collapse-icons">
+                  <i class="material-icons add"></i>
+                  <i class="material-icons remove"></i>
+                </span>
+              </span>
+    </div>
+    <ul id="facet_83866" class="collapse">
+        <li>
+            <label class="facet-label">
+                                                  <span class="custom-checkbox">
+                            <input data-search-url="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Size-S" type="checkbox">
+                                                          <span><i class="material-icons checkbox-checked"></i></span>
+                                                      </span>
+
+                <a href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Size-S" class="_gray-darker search-link js-search-link" rel="nofollow">
+                    S
+                    <span class="magnitude">(14)</span>
+                </a>
+            </label>
+        </li>
+        <li>
+            <label class="facet-label">
+                                                  <span class="custom-checkbox">
+                            <input data-search-url="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Size-M" type="checkbox">
+                                                          <span><i class="material-icons checkbox-checked"></i></span>
+                                                      </span>
+
+                <a href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Size-M" class="_gray-darker search-link js-search-link" rel="nofollow">
+                    M
+                    <span class="magnitude">(14)</span>
+                </a>
+            </label>
+        </li>
+        <li>
+            <label class="facet-label">
+                                                  <span class="custom-checkbox">
+                            <input data-search-url="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Size-L" type="checkbox">
+                                                          <span><i class="material-icons checkbox-checked"></i></span>
+                                                      </span>
+
+                <a href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Size-L" class="_gray-darker search-link js-search-link" rel="nofollow">
+                    L
+                    <span class="magnitude">(14)</span>
+                </a>
+            </label>
+        </li>
+    </ul>
+</section>
+<section class="facet  attr-color">
+    <h1 class="h6 facet-title hidden-sm-down">Color</h1>
+    <div class="title hidden-md-up" data-target="#facet_26053" data-toggle="collapse">
+        <h1 class="h6 facet-title">Color</h1>
+              <span class="float-xs-right">
+                <span class="navbar-toggler collapse-icons">
+                  <i class="material-icons add"></i>
+                  <i class="material-icons remove"></i>
+                </span>
+              </span>
+    </div>
+    <ul id="facet_26053" class="collapse">
+        <li>
+            <label class="facet-label">
+                                                  <span class="custom-checkbox">
+                            <input data-search-url="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Color-Beige" type="checkbox">
+                                                          <span class="color" style="background-color:#f5f5dc"></span>
+                                                        </span>
+
+                <a href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Color-Beige" class="_gray-darker search-link js-search-link" rel="nofollow">
+                    Beige
+                    <span class="magnitude">(1)</span>
+                </a>
+            </label>
+        </li>
+        <li>
+            <label class="facet-label">
+                                                  <span class="custom-checkbox">
+                            <input data-search-url="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Color-White" type="checkbox">
+                                                          <span class="color" style="background-color:#ffffff"></span>
+                                                        </span>
+
+                <a href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Color-White" class="_gray-darker search-link js-search-link" rel="nofollow">
+                    White
+                    <span class="magnitude">(6)</span>
+                </a>
+            </label>
+        </li>
+        <li>
+            <label class="facet-label">
+                                                  <span class="custom-checkbox">
+                            <input data-search-url="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Color-Black" type="checkbox">
+                                                          <span class="color" style="background-color:#434A54"></span>
+                                                        </span>
+
+                <a href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Color-Black" class="_gray-darker search-link js-search-link" rel="nofollow">
+                    Black
+                    <span class="magnitude">(2)</span>
+                </a>
+            </label>
+        </li>
+        <li>
+            <label class="facet-label">
+                                                  <span class="custom-checkbox">
+                            <input data-search-url="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Color-Orange" type="checkbox">
+                                                          <span class="color" style="background-color:#F39C11"></span>
+                                                        </span>
+
+                <a href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Color-Orange" class="_gray-darker search-link js-search-link" rel="nofollow">
+                    Orange
+                    <span class="magnitude">(3)</span>
+                </a>
+            </label>
+        </li>
+        <li>
+            <label class="facet-label">
+                                                  <span class="custom-checkbox">
+                            <input data-search-url="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Color-Blue" type="checkbox">
+                                                          <span class="color" style="background-color:#5D9CEC"></span>
+                                                        </span>
+
+                <a href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Color-Blue" class="_gray-darker search-link js-search-link" rel="nofollow">
+                    Blue
+                    <span class="magnitude">(2)</span>
+                </a>
+            </label>
+        </li>
+        <li>
+            <label class="facet-label">
+                                                  <span class="custom-checkbox">
+                            <input data-search-url="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Color-Green" type="checkbox">
+                                                          <span class="color" style="background-color:#A0D468"></span>
+                                                        </span>
+
+                <a href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Color-Green" class="_gray-darker search-link js-search-link" rel="nofollow">
+                    Green
+                    <span class="magnitude">(4)</span>
+                </a>
+            </label>
+        </li>
+        <li>
+            <label class="facet-label">
+                                                  <span class="custom-checkbox">
+                            <input data-search-url="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Color-Yellow" type="checkbox">
+                                                          <span class="color" style="background-color:#F1C40F"></span>
+                                                        </span>
+
+                <a href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Color-Yellow" class="_gray-darker search-link js-search-link" rel="nofollow">
+                    Yellow
+                    <span class="magnitude">(10)</span>
+                </a>
+            </label>
+        </li>
+        <li>
+            <label class="facet-label">
+                                                  <span class="custom-checkbox">
+                            <input data-search-url="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Color-Pink" type="checkbox">
+                                                          <span class="color" style="background-color:#FCCACD"></span>
+                                                        </span>
+
+                <a href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Color-Pink" class="_gray-darker search-link js-search-link" rel="nofollow">
+                    Pink
+                    <span class="magnitude">(1)</span>
+                </a>
+            </label>
+        </li>
+    </ul>
+</section>
+<section class="facet ">
+    <h1 class="h6 facet-title hidden-sm-down">Compositions</h1>
+    <div class="title hidden-md-up" data-target="#facet_93909" data-toggle="collapse">
+        <h1 class="h6 facet-title">Compositions</h1>
+              <span class="float-xs-right">
+                <span class="navbar-toggler collapse-icons">
+                  <i class="material-icons add"></i>
+                  <i class="material-icons remove"></i>
+                </span>
+              </span>
+    </div>
+    <ul id="facet_93909" class="collapse">
+        <li>
+            <label class="facet-label">
+                                                  <span class="custom-checkbox">
+                            <input data-search-url="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Compositions-Cotton" type="checkbox">
+                                                          <span><i class="material-icons checkbox-checked"></i></span>
+                                                      </span>
+
+                <a href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Compositions-Cotton" class="_gray-darker search-link js-search-link" rel="nofollow">
+                    Cotton
+                    <span class="magnitude">(3)</span>
+                </a>
+            </label>
+        </li>
+        <li>
+            <label class="facet-label">
+                                                  <span class="custom-checkbox">
+                            <input data-search-url="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Compositions-Polyester" type="checkbox">
+                                                          <span><i class="material-icons checkbox-checked"></i></span>
+                                                      </span>
+
+                <a href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Compositions-Polyester" class="_gray-darker search-link js-search-link" rel="nofollow">
+                    Polyester
+                    <span class="magnitude">(9)</span>
+                </a>
+            </label>
+        </li>
+        <li>
+            <label class="facet-label">
+                                                  <span class="custom-checkbox">
+                            <input data-search-url="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Compositions-Viscose" type="checkbox">
+                                                          <span><i class="material-icons checkbox-checked"></i></span>
+                                                      </span>
+
+                <a href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Compositions-Viscose" class="_gray-darker search-link js-search-link" rel="nofollow">
+                    Viscose
+                    <span class="magnitude">(2)</span>
+                </a>
+            </label>
+        </li>
+    </ul>
+</section>
+<section class="facet ">
+    <h1 class="h6 facet-title hidden-sm-down">Properties</h1>
+    <div class="title hidden-md-up" data-target="#facet_76055" data-toggle="collapse">
+        <h1 class="h6 facet-title">Properties</h1>
+              <span class="float-xs-right">
+                <span class="navbar-toggler collapse-icons">
+                  <i class="material-icons add"></i>
+                  <i class="material-icons remove"></i>
+                </span>
+              </span>
+    </div>
+    <ul id="facet_76055" class="collapse">
+        <li>
+            <label class="facet-label">
+                                                  <span class="custom-checkbox">
+                            <input data-search-url="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Properties-Colorful+Dress" type="checkbox">
+                                                          <span><i class="material-icons checkbox-checked"></i></span>
+                                                      </span>
+
+                <a href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Properties-Colorful+Dress" class="_gray-darker search-link js-search-link" rel="nofollow">
+                    Colorful Dress
+                    <span class="magnitude">(1)</span>
+                </a>
+            </label>
+        </li>
+        <li>
+            <label class="facet-label">
+                                                  <span class="custom-checkbox">
+                            <input data-search-url="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Properties-Maxi+Dress" type="checkbox">
+                                                          <span><i class="material-icons checkbox-checked"></i></span>
+                                                      </span>
+
+                <a href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Properties-Maxi+Dress" class="_gray-darker search-link js-search-link" rel="nofollow">
+                    Maxi Dress
+                    <span class="magnitude">(1)</span>
+                </a>
+            </label>
+        </li>
+        <li>
+            <label class="facet-label">
+                                                  <span class="custom-checkbox">
+                            <input data-search-url="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Properties-Midi+Dress" type="checkbox">
+                                                          <span><i class="material-icons checkbox-checked"></i></span>
+                                                      </span>
+
+                <a href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Properties-Midi+Dress" class="_gray-darker search-link js-search-link" rel="nofollow">
+                    Midi Dress
+                    <span class="magnitude">(4)</span>
+                </a>
+            </label>
+        </li>
+        <li>
+            <label class="facet-label">
+                                                  <span class="custom-checkbox">
+                            <input data-search-url="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Properties-Short+Dress" type="checkbox">
+                                                          <span><i class="material-icons checkbox-checked"></i></span>
+                                                      </span>
+
+                <a href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Properties-Short+Dress" class="_gray-darker search-link js-search-link" rel="nofollow">
+                    Short Dress
+                    <span class="magnitude">(6)</span>
+                </a>
+            </label>
+        </li>
+        <li>
+            <label class="facet-label">
+                                                  <span class="custom-checkbox">
+                            <input data-search-url="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Properties-Short+Sleeve" type="checkbox">
+                                                          <span><i class="material-icons checkbox-checked"></i></span>
+                                                      </span>
+
+                <a href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Properties-Short+Sleeve" class="_gray-darker search-link js-search-link" rel="nofollow">
+                    Short Sleeve
+                    <span class="magnitude">(2)</span>
+                </a>
+            </label>
+        </li>
+    </ul>
+</section>
+<section class="facet ">
+    <h1 class="h6 facet-title hidden-sm-down">Styles</h1>
+    <div class="title hidden-md-up" data-target="#facet_54333" data-toggle="collapse">
+        <h1 class="h6 facet-title">Styles</h1>
+              <span class="float-xs-right">
+                <span class="navbar-toggler collapse-icons">
+                  <i class="material-icons add"></i>
+                  <i class="material-icons remove"></i>
+                </span>
+              </span>
+    </div>
+    <ul id="facet_54333" class="collapse">
+        <li>
+            <label class="facet-label">
+                                                  <span class="custom-checkbox">
+                            <input data-search-url="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Styles-Casual" type="checkbox">
+                                                          <span><i class="material-icons checkbox-checked"></i></span>
+                                                      </span>
+
+                <a href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Styles-Casual" class="_gray-darker search-link js-search-link" rel="nofollow">
+                    Casual
+                    <span class="magnitude">(3)</span>
+                </a>
+            </label>
+        </li>
+        <li>
+            <label class="facet-label">
+                                                  <span class="custom-checkbox">
+                            <input data-search-url="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Styles-Dressy" type="checkbox">
+                                                          <span><i class="material-icons checkbox-checked"></i></span>
+                                                      </span>
+
+                <a href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Styles-Dressy" class="_gray-darker search-link js-search-link" rel="nofollow">
+                    Dressy
+                    <span class="magnitude">(1)</span>
+                </a>
+            </label>
+        </li>
+        <li>
+            <label class="facet-label">
+                                                  <span class="custom-checkbox">
+                            <input data-search-url="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Styles-Girly" type="checkbox">
+                                                          <span><i class="material-icons checkbox-checked"></i></span>
+                                                      </span>
+
+                <a href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Styles-Girly" class="_gray-darker search-link js-search-link" rel="nofollow">
+                    Girly
+                    <span class="magnitude">(10)</span>
+                </a>
+            </label>
+        </li>
+    </ul>
+</section>
+<section class="facet ">
+    <h1 class="h6 facet-title hidden-sm-down">Availability</h1>
+    <div class="title hidden-md-up" data-target="#facet_1311" data-toggle="collapse">
+        <h1 class="h6 facet-title">Availability</h1>
+              <span class="float-xs-right">
+                <span class="navbar-toggler collapse-icons">
+                  <i class="material-icons add"></i>
+                  <i class="material-icons remove"></i>
+                </span>
+              </span>
+    </div>
+    <ul id="facet_1311" class="collapse">
+        <li>
+            <label class="facet-label">
+                                                  <span class="custom-checkbox">
+                            <input data-search-url="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Availability-Not+available" type="checkbox">
+                                                          <span><i class="material-icons checkbox-checked"></i></span>
+                                                      </span>
+
+                <a href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Availability-Not+available" class="_gray-darker search-link js-search-link" rel="nofollow">
+                    Not available
+                    <span class="magnitude">(2)</span>
+                </a>
+            </label>
+        </li>
+        <li>
+            <label class="facet-label">
+                                                  <span class="custom-checkbox">
+                            <input data-search-url="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Availability-In+stock" type="checkbox">
+                                                          <span><i class="material-icons checkbox-checked"></i></span>
+                                                      </span>
+
+                <a href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Availability-In+stock" class="_gray-darker search-link js-search-link" rel="nofollow">
+                    In stock
+                    <span class="magnitude">(12)</span>
+                </a>
+            </label>
+        </li>
+    </ul>
+</section>
+<section class="facet ">
+    <h1 class="h6 facet-title hidden-sm-down">Brand</h1>
+    <div class="title hidden-md-up" data-target="#facet_8505" data-toggle="collapse">
+        <h1 class="h6 facet-title">Brand</h1>
+              <span class="float-xs-right">
+                <span class="navbar-toggler collapse-icons">
+                  <i class="material-icons add"></i>
+                  <i class="material-icons remove"></i>
+                </span>
+              </span>
+    </div>
+    <ul id="facet_8505" class="collapse">
+        <li>
+            <label class="facet-label">
+                                                  <span class="custom-checkbox">
+                            <input data-search-url="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Brand-manufacturers--1" type="checkbox">
+                                                          <span><i class="material-icons checkbox-checked"></i></span>
+                                                      </span>
+
+                <a href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Brand-manufacturers--1" class="_gray-darker search-link js-search-link" rel="nofollow">
+                    manufacturers-1
+                    <span class="magnitude">(4)</span>
+                </a>
+            </label>
+        </li>
+        <li>
+            <label class="facet-label">
+                                                  <span class="custom-checkbox">
+                            <input data-search-url="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Brand-manufacturers--2" type="checkbox">
+                                                          <span><i class="material-icons checkbox-checked"></i></span>
+                                                      </span>
+
+                <a href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Brand-manufacturers--2" class="_gray-darker search-link js-search-link" rel="nofollow">
+                    manufacturers-2
+                    <span class="magnitude">(2)</span>
+                </a>
+            </label>
+        </li>
+        <li>
+            <label class="facet-label">
+                                                  <span class="custom-checkbox">
+                            <input data-search-url="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Brand-manufacturers--3" type="checkbox">
+                                                          <span><i class="material-icons checkbox-checked"></i></span>
+                                                      </span>
+
+                <a href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Brand-manufacturers--3" class="_gray-darker search-link js-search-link" rel="nofollow">
+                    manufacturers-3
+                    <span class="magnitude">(1)</span>
+                </a>
+            </label>
+        </li>
+        <li>
+            <label class="facet-label">
+                                                  <span class="custom-checkbox">
+                            <input data-search-url="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Brand-manufacturers--4" type="checkbox">
+                                                          <span><i class="material-icons checkbox-checked"></i></span>
+                                                      </span>
+
+                <a href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Brand-manufacturers--4" class="_gray-darker search-link js-search-link" rel="nofollow">
+                    manufacturers-4
+                    <span class="magnitude">(1)</span>
+                </a>
+            </label>
+        </li>
+        <li>
+            <label class="facet-label">
+                                                  <span class="custom-checkbox">
+                            <input data-search-url="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Brand-manufacturers--5" type="checkbox">
+                                                          <span><i class="material-icons checkbox-checked"></i></span>
+                                                      </span>
+
+                <a href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Brand-manufacturers--5" class="_gray-darker search-link js-search-link" rel="nofollow">
+                    manufacturers-5
+                    <span class="magnitude">(1)</span>
+                </a>
+            </label>
+        </li>
+        <li>
+            <label class="facet-label">
+                                                  <span class="custom-checkbox">
+                            <input data-search-url="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Brand-manufacturers--6" type="checkbox">
+                                                          <span><i class="material-icons checkbox-checked"></i></span>
+                                                      </span>
+
+                <a href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Brand-manufacturers--6" class="_gray-darker search-link js-search-link" rel="nofollow">
+                    manufacturers-6
+                    <span class="magnitude">(2)</span>
+                </a>
+            </label>
+        </li>
+        <li>
+            <label class="facet-label">
+                                                  <span class="custom-checkbox">
+                            <input data-search-url="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Brand-manufacturers--7" type="checkbox">
+                                                          <span><i class="material-icons checkbox-checked"></i></span>
+                                                      </span>
+
+                <a href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Brand-manufacturers--7" class="_gray-darker search-link js-search-link" rel="nofollow">
+                    manufacturers-7
+                    <span class="magnitude">(1)</span>
+                </a>
+            </label>
+        </li>
+        <li>
+            <label class="facet-label">
+                                                  <span class="custom-checkbox">
+                            <input data-search-url="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Brand-manufacturers--8" type="checkbox">
+                                                          <span><i class="material-icons checkbox-checked"></i></span>
+                                                      </span>
+
+                <a href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Brand-manufacturers--8" class="_gray-darker search-link js-search-link" rel="nofollow">
+                    manufacturers-8
+                    <span class="magnitude">(1)</span>
+                </a>
+            </label>
+        </li>
+        <li>
+            <label class="facet-label">
+                                                  <span class="custom-checkbox">
+                            <input data-search-url="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Brand-manufacturers--9" type="checkbox">
+                                                          <span><i class="material-icons checkbox-checked"></i></span>
+                                                      </span>
+
+                <a href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Brand-manufacturers--9" class="_gray-darker search-link js-search-link" rel="nofollow">
+                    manufacturers-9
+                    <span class="magnitude">(1)</span>
+                </a>
+            </label>
+        </li>
+    </ul>
+</section>
+<section class="facet ">
+    <h1 class="h6 facet-title hidden-sm-down">Price</h1>
+    <div class="title hidden-md-up" data-target="#facet_68577" data-toggle="collapse">
+        <h1 class="h6 facet-title">Price</h1>
+              <span class="float-xs-right">
+                <span class="navbar-toggler collapse-icons">
+                  <i class="material-icons add"></i>
+                  <i class="material-icons remove"></i>
+                </span>
+              </span>
+    </div>
+    <ul id="facet_68577" class="collapse">
+        <li>
+            <label class="facet-label">
+                                                  <span class="custom-checkbox">
+                            <input data-search-url="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Price-%24-15-17" type="checkbox">
+                                                          <span><i class="material-icons checkbox-checked"></i></span>
+                                                      </span>
+
+                <a href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Price-%24-15-17" class="_gray-darker search-link js-search-link" rel="nofollow">
+                    $15.00 - $17.00
+                    <span class="magnitude">(2)</span>
+                </a>
+            </label>
+        </li>
+        <li>
+            <label class="facet-label">
+                                                  <span class="custom-checkbox">
+                            <input data-search-url="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Price-%24-19-20" type="checkbox">
+                                                          <span><i class="material-icons checkbox-checked"></i></span>
+                                                      </span>
+
+                <a href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Price-%24-19-20" class="_gray-darker search-link js-search-link" rel="nofollow">
+                    $19.00 - $20.00
+                    <span class="magnitude">(1)</span>
+                </a>
+            </label>
+        </li>
+        <li>
+            <label class="facet-label">
+                                                  <span class="custom-checkbox">
+                            <input data-search-url="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Price-%24-23-32" type="checkbox">
+                                                          <span><i class="material-icons checkbox-checked"></i></span>
+                                                      </span>
+
+                <a href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Price-%24-23-32" class="_gray-darker search-link js-search-link" rel="nofollow">
+                    $23.00 - $32.00
+                    <span class="magnitude">(6)</span>
+                </a>
+            </label>
+        </li>
+        <li>
+            <label class="facet-label">
+                                                  <span class="custom-checkbox">
+                            <input data-search-url="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Price-%24-33-37" type="checkbox">
+                                                          <span><i class="material-icons checkbox-checked"></i></span>
+                                                      </span>
+
+                <a href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Price-%24-33-37" class="_gray-darker search-link js-search-link" rel="nofollow">
+                    $33.00 - $37.00
+                    <span class="magnitude">(2)</span>
+                </a>
+            </label>
+        </li>
+        <li>
+            <label class="facet-label">
+                                                  <span class="custom-checkbox">
+                            <input data-search-url="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Price-%24-50-53" type="checkbox">
+                                                          <span><i class="material-icons checkbox-checked"></i></span>
+                                                      </span>
+
+                <a href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Price-%24-50-53" class="_gray-darker search-link js-search-link" rel="nofollow">
+                    $50.00 - $53.00
+                    <span class="magnitude">(1)</span>
+                </a>
+            </label>
+        </li>
+        <li>
+            <label class="facet-label">
+                                                  <span class="custom-checkbox">
+                            <input data-search-url="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Price-%24-63-66" type="checkbox">
+                                                          <span><i class="material-icons checkbox-checked"></i></span>
+                                                      </span>
+
+                <a href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Price-%24-63-66" class="_gray-darker search-link js-search-link" rel="nofollow">
+                    $63.00 - $66.00
+                    <span class="magnitude">(1)</span>
+                </a>
+            </label>
+        </li>
+        <li>
+            <label class="facet-label">
+                                                  <span class="custom-checkbox">
+                            <input data-search-url="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Price-%24-73-76" type="checkbox">
+                                                          <span><i class="material-icons checkbox-checked"></i></span>
+                                                      </span>
+
+                <a href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;q=Price-%24-73-76" class="_gray-darker search-link js-search-link" rel="nofollow">
+                    $73.00 - $76.00
+                    <span class="magnitude">(1)</span>
+                </a>
+            </label>
+        </li>
+    </ul>
+</section>
+</div>
+</div>
+
+
+
+
+
+</div>
+
+<!-- Block categories module -->
+<div id="categories_blog_menu" class="block blog-menu">
+    <h4 class="title_block">Blog Categories</h4>
+    <div class="block_content">
+        <ul id="" class="level1 tree dhtml "><li id="list_3" class=" "><a href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/blog/category-1-c3.html" title="Category 1"><span>Category 1</span></a> <div class="navbar-toggler collapse-icons" data-toggle="collapse" data-target="#sub_3">
+                    <i class="material-icons add">add</i>
+                    <i class="material-icons remove">remove</i>
+                </div><ul id="sub_3" class="level2 collapse "><li id="list_4" class=" "><a href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/blog/sub-category-1-c4.html" title="Sub Category 1"><span>Sub Category 1</span></a> </li><li id="list_5" class=" "><a href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/blog/sub-category-2-c5.html" title="Sub Category 2"><span>Sub Category 2</span></a> </li></ul></li></ul>
+    </div>
+</div>
+<!-- /Block categories module -->
+<section class="bestseller-products clearfix block">
+    <h1 class="h1 products-section-title title_block text-uppercase">
+        Best Sellers
+    </h1>
+    <div class="block_content">
+        <div class="products">
+
+
+
+
+
+
+
+
+            <!-- Products list -->
+            <div class="product_list grid  product-list-default">
+                <div class="row">
+
+
+
+
+                    <div class="ajax_block_product col-sp-12 col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+
+
+                        <article class="product-miniature js-product-miniature" data-id-product="2" data-id-product-attribute="7" itemscope="" itemtype="http://schema.org/Product">
+                            <div class="thumbnail-container">
+                                <div class="product-image">
+                                    <!-- @file modulesappagebuilderviewstemplatesfrontproductsfile_tpl -->
+
+                                    <a href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/home/2-7-blouse.html#/1-size-s/11-color-black" class="thumbnail product-thumbnail">
+                                        <img class="img-fluid" src="http://demo4leotheme.com/prestashop/leo_leblanc_demo/30-home_default/blouse.jpg" alt="" data-full-size-image-url="http://demo4leotheme.com/prestashop/leo_leblanc_demo/30-large_default/blouse.jpg">
+                                        <span class="product-additional" data-idproduct="2"><img class="img-fluid" title="Blouse" alt="Blouse" src="http://demo4leotheme.com/prestashop/leo_leblanc_demo/31-home_default/blouse.jpg" width="450" height="567"></span>
+                                    </a>
+
+
+
+                                    <!-- @file modulesappagebuilderviewstemplatesfrontproductsfile_tpl -->
+                                    <div class="quickview hidden-sm-down">
+                                        <a href="#" class="quick-view" data-link-action="quickview">
+                                            <i class="material-icons search"></i> Quick view
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="product-meta">
+                                    <!-- @file modules\appagebuilder\views\templates\front\products\file_tpl -->
+
+                                    <h1 class="h3 product-title" itemprop="name"><a href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/home/2-7-blouse.html#/1-size-s/11-color-black">Blouse</a></h1>
+
+
+                                    <!-- @file modulesappagebuilderviewstemplatesfrontproductsfile_tpl -->
+
+                                    <div class="product-price-and-shipping">
+              <span class="price" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+                <span itemprop="priceCurrency" content="USD"></span><span itemprop="price" content="26.99">$26.99</span>
+              </span>
+
+
+
+
+
+
+
+                                    </div>
+
+
+
+                                    <div class="product-description-short" itemprop="description"><p>Detracto deterruisset pro an. Graeco interesset nam te, vim et oporteat recusabo. Ex eam fastidii percipitur, verear consequat voluptatum ex...</p></div>
+                                </div>
+                            </div>
+                        </article>
+
+
+                    </div>
+
+
+
+
+                    <div class="ajax_block_product col-sp-12 col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+
+
+                        <article class="product-miniature js-product-miniature" data-id-product="3" data-id-product-attribute="13" itemscope="" itemtype="http://schema.org/Product">
+                            <div class="thumbnail-container">
+                                <div class="product-image">
+                                    <!-- @file modulesappagebuilderviewstemplatesfrontproductsfile_tpl -->
+
+                                    <a href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/home/3-13-printed-dress.html#/1-size-s/13-color-orange" class="thumbnail product-thumbnail">
+                                        <img class="img-fluid" src="http://demo4leotheme.com/prestashop/leo_leblanc_demo/33-home_default/printed-dress.jpg" alt="" data-full-size-image-url="http://demo4leotheme.com/prestashop/leo_leblanc_demo/33-large_default/printed-dress.jpg">
+                                        <span class="product-additional" data-idproduct="3"><img class="img-fluid" title="Printed Dress" alt="Printed Dress" src="http://demo4leotheme.com/prestashop/leo_leblanc_demo/32-home_default/printed-dress.jpg" width="450" height="567"></span>
+                                    </a>
+
+
+
+                                    <!-- @file modulesappagebuilderviewstemplatesfrontproductsfile_tpl -->
+                                    <div class="quickview hidden-sm-down">
+                                        <a href="#" class="quick-view" data-link-action="quickview">
+                                            <i class="material-icons search"></i> Quick view
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="product-meta">
+                                    <!-- @file modules\appagebuilder\views\templates\front\products\file_tpl -->
+
+                                    <h1 class="h3 product-title" itemprop="name"><a href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/home/3-13-printed-dress.html#/1-size-s/13-color-orange">Printed Dress</a></h1>
+
+
+                                    <!-- @file modulesappagebuilderviewstemplatesfrontproductsfile_tpl -->
+
+                                    <div class="product-price-and-shipping">
+              <span class="price" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+                <span itemprop="priceCurrency" content="USD"></span><span itemprop="price" content="25.99">$25.99</span>
+              </span>
+
+
+
+
+
+
+
+                                    </div>
+
+
+
+                                    <div class="product-description-short" itemprop="description"><p>Detracto deterruisset pro an. Graeco interesset nam te, vim et oporteat recusabo. Ex eam fastidii percipitur, verear consequat voluptatum ex...</p></div>
+                                </div>
+                            </div>
+                        </article>
+
+
+                    </div>
+
+
+
+
+                    <div class="ajax_block_product col-sp-12 col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+
+
+                        <article class="product-miniature js-product-miniature" data-id-product="1" data-id-product-attribute="5" itemscope="" itemtype="http://schema.org/Product">
+                            <div class="thumbnail-container">
+                                <div class="product-image">
+                                    <!-- @file modulesappagebuilderviewstemplatesfrontproductsfile_tpl -->
+
+                                    <a href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/home/1-5-faded-short-sleeves-tshirt.html#/3-size-l/13-color-orange" class="thumbnail product-thumbnail">
+                                        <img class="img-fluid" src="http://demo4leotheme.com/prestashop/leo_leblanc_demo/25-home_default/faded-short-sleeves-tshirt.jpg" alt="" data-full-size-image-url="http://demo4leotheme.com/prestashop/leo_leblanc_demo/25-large_default/faded-short-sleeves-tshirt.jpg">
+                                        <span class="product-additional" data-idproduct="1"><img class="img-fluid" title="Shoes Short Sleeves" alt="Shoes Short Sleeves" src="http://demo4leotheme.com/prestashop/leo_leblanc_demo/24-home_default/faded-short-sleeves-tshirt.jpg" width="450" height="567"></span>
+                                    </a>
+
+
+
+                                    <!-- @file modulesappagebuilderviewstemplatesfrontproductsfile_tpl -->
+                                    <div class="quickview hidden-sm-down">
+                                        <a href="#" class="quick-view" data-link-action="quickview">
+                                            <i class="material-icons search"></i> Quick view
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="product-meta">
+                                    <!-- @file modules\appagebuilder\views\templates\front\products\file_tpl -->
+
+                                    <h1 class="h3 product-title" itemprop="name"><a href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/home/1-5-faded-short-sleeves-tshirt.html#/3-size-l/13-color-orange">Shoes Short Sleeves</a></h1>
+
+
+                                    <!-- @file modulesappagebuilderviewstemplatesfrontproductsfile_tpl -->
+
+                                    <div class="product-price-and-shipping">
+              <span class="price" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+                <span itemprop="priceCurrency" content="USD"></span><span itemprop="price" content="15.68">$15.68</span>
+              </span>
+                                        <span class="regular-price">$16.51</span>
+                                        <span class="discount-percentage">-5%</span>
+                                    </div>
+
+
+
+                                    <div class="product-description-short" itemprop="description"><p>Detracto deterruisset pro an. Graeco interesset nam te, vim et oporteat recusabo. Ex eam fastidii percipitur, verear consequat voluptatum ex...</p></div>
+                                </div>
+                            </div>
+                        </article>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/best-sales" class="all-product-link float-xs-left btn btn-primary">
+            View all
+        </a>
+    </div>
+</section>
+
+</div>

@@ -1,0 +1,13 @@
+
+{% import "@SyliusShop/Common/Macro/money.html.twig" as money %}
+<div id="cart-block">
+    <div class="blockcart cart-preview inactive" data-refresh-url="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/module/ps_shoppingcart/ajax">
+        <div class="header">
+            <a rel="nofollow" title="View my card" class="meta-cart" href="{{ path('sylius_shop_cart_summary') }}">
+                <i class="icon-cart ti-bag"></i>
+                <span class="title-cart">Cart</span>
+                <span class="cart-products-count">{{ cart.PromotionSubjectCount }}</span>
+            </a>
+        </div>
+    </div>
+</div>

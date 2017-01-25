@@ -1,0 +1,71 @@
+{% if resources.data.nbResults > 0 %}
+
+    {% set definition = resources.definition %}
+
+    {% set route = app.request.attributes.get('_route') %}
+    {% set route_parameters = app.request.attributes.get('_route_params') %}
+
+    {% set criteria = app.request.query.get('criteria', {}) %}
+
+    {% set default_path = path(route, {'criteria': criteria}|merge(route_parameters)) %}
+    {% set oldest_first_path = path(route, {'sorting': {'createdAt': 'asc'}, 'criteria': criteria}|merge(route_parameters)) %}
+    {% set newest_first_path = path(route, {'sorting': {'createdAt': 'desc'}, 'criteria': criteria}|merge(route_parameters)) %}
+
+    {% if app.request.query.get('sorting') is empty %}
+        {% set current_sorting_label = 'sylius.ui.by_position'|trans|lower %}
+    {% elseif  app.request.get('sorting').createdAt == 'desc' %}
+        {% set current_sorting_label = 'sylius.ui.newest_first'|trans|lower %}
+    {% else %}
+        {% set current_sorting_label = 'sylius.ui.oldest_first'|trans|lower %}
+    {% endif %}
+
+    <div id="">
+        <div id="js-product-list-top" class="products-selection">
+            <div class="row">
+                <div class="col-lg-6 col-md-3 hidden-sm-down total-products">
+
+                    <div class="display">
+                        <div id="grid" class="leo_grid "><a rel="nofollow" href="#" title="Grid"><i class="icon ti-view-grid"></i></a></div>
+                        <div id="list" class="leo_list "><a rel="nofollow" href="#" title="List"><i class="icon ti-view-list-alt"></i></a></div>
+                    </div>
+
+                    <p class="products-counter hidden-md-down">There are 9 products.</p>
+                </div>
+                <div class="col-lg-6 col-md-9">
+                    <div class="row sort-by-row">
+
+                        <span class="col-sm-3 col-md-3 hidden-sm-down sort-by">{{ 'sylius.ui.display'|trans }}</span>
+                        <div class="col-sm-9 col-xs-8 col-sp-12 col-md-9 products-sort-order dropdown">
+                            <a class="select-title" rel="nofollow" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                {{ current_sorting_label }}    <i class="material-icons float-xs-right"></i>
+                            </a>
+                            <div class="dropdown-menu">
+                                <a rel="nofollow" href="{{ default_path }}"
+                                   class="select-list current js-search-link">
+                                    {{ 'sylius.ui.by_position'|trans }}
+                                </a>
+                                <a rel="nofollow" href="{{ newest_first_path }}"
+                                   class="select-list js-search-link">
+                                    {{ 'sylius.ui.newest_first'|trans }}
+                                </a>
+                                <a rel="nofollow" href="{{ 'sylius.ui.oldest_first'|trans|lower }}" class="select-list js-search-link">
+                                    {{ 'sylius.ui.oldest_first'|trans }}
+                                </a>
+                            </div>
+                        </div>
+
+
+                        <div class="col-sm-3 col-xs-4 col-sp-12 hidden-md-up filter-button">
+                            <button id="search_filter_toggler" class="btn btn-primary">
+                                Filter
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 hidden-lg-up text-xs-center showing">
+                    Showing 1-9 of 14 item(s)
+                </div>
+            </div>
+        </div>
+    </div>
+{% endif %}

@@ -1,0 +1,32 @@
+{% extends '@SyliusShop/layout.html.twig' %}
+
+{% form_theme form '@SyliusUi/Form/theme.html.twig' %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div id="content-wrapper" class="col-lg-12 col-xs-12">
+                <section id="main">
+                    {% include '@SyliusShop/Register/_header.html.twig' %}
+                    <section id="content" class="page-content card card-block">
+                        <section class="register-form">
+                            <p>{{ 'sylius.ui.have_an_account_already'|trans }} <a href="{{ path('sylius_shop_login') }}">{{ 'sylius.ui.sign_in_here'|trans }}</a></p>
+                            {{ form_start(form, {'action': path('sylius_shop_register'), 'attr': {'class': 'js-customer-form', 'id': 'customer-form'}}) }}
+                            {% include '@SyliusShop/Register/_form.html.twig' %}
+
+                            <footer class="form-footer clearfix">
+                                <input type="hidden" name="submitCreate" value="1">
+                                <button class="btn btn-primary form-control-submit pull-xs-right" data-link-action="save-customer" type="submit">
+                                    {{ 'sylius.ui.create_an_account'|trans }}
+                                </button>
+                                {{ form_end(form, {'render_rest': false}) }}
+                            </footer>
+                        </section>
+                    </section>
+                </section>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+

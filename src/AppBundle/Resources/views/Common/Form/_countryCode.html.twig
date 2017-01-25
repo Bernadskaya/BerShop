@@ -1,0 +1,17 @@
+{% if form.vars.choices|length == 1 %}
+    <label class="col-md-3 form-control-label required">
+        {{ form_label(form) }}
+    </label>
+    <div class="col-md-6">
+        {{ form_widget(form, {'attr': {'class': 'form-control form-control-select js-country'}}) }}
+    </div>
+    {{ form_row(form, {'value': form.vars.choices[0].value}) }}
+{% else %}
+    {{ form_row(form) }}
+    <label class="col-md-3 form-control-label required">
+        {{ form_label(form) }}
+    </label>
+    <div class="col-md-6">
+        {{ form_widget(form, {'attr': {'class': 'form-control form-control-select js-country'}}) }}
+    </div>
+{% endif %}

@@ -1,0 +1,41 @@
+{% set parents = taxon.parents|reverse %}
+
+<nav data-depth="2" class="breadcrumb">
+    <div class="container">
+        <h1 class="h1 category-name">{{ taxon.name }}</h1>
+        <ol itemscope itemtype="http://schema.org/BreadcrumbList">
+            <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                <a itemprop="item" href="{{ path('sylius_shop_homepage') }}">
+                    <span itemprop="name">{{ 'sylius.ui.home'|trans }}</span>
+                </a>
+                <meta itemprop="position" content="1">
+            </li>
+
+            {% for parent in parents %}
+                {% if parent.isRoot() %}
+                    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                            <span itemprop="name">{{ parent.name }}</span>
+                        <meta itemprop="position" content="1">
+                    </li>
+                {% else %}
+                    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                        <a itemprop="item" href="{{ path('sylius_shop_product_index', {'slug': parent.slug}) }}">
+                            <span itemprop="name">{{ parent.name }}</span>
+                        </a>
+                        <meta itemprop="position" content="{{ loop.index }}">
+                    </li>
+                {% endif %}
+            {% endfor %}
+            <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                <a itemprop="item" href="{{ path('sylius_shop_product_index', {'slug': taxon.slug}) }}">
+                    <span itemprop="name">{{ taxon.name }}</span>
+                </a>
+                <meta itemprop="position" content="">
+            </li>
+        </ol>
+    </div>
+
+    <div class="category-cover">
+        <img src="http://demo4leotheme.com/prestashop/leo_leblanc_demo/c/3-category_default/fashion.jpg" class="img-fluid" alt="">
+    </div>
+</nav>

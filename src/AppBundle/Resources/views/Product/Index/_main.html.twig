@@ -1,0 +1,69 @@
+{% import '@SyliusUi/Macro/messages.html.twig' as messages %}
+{% import '@SyliusUi/Macro/pagination.html.twig' as pagination %}
+
+
+{% include '@SyliusShop/Product/Index/_search.html.twig' %}
+{% include '@SyliusShop/Product/Index/_sorting.html.twig' %}
+
+<div id="">
+    <div id="js-product-list">
+        <div class="products">
+
+
+            <!-- Products list -->
+            <div class="product_list  product-list-default grid">
+                <div class="row">
+                    {% if resources.data|length > 0 %}
+                        {% for product in resources.data %}
+                            <div class="ajax_block_product col-sp-12 col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                                {% include '@SyliusShop/Product/_box.html.twig' %}
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        {{ messages.info('sylius.ui.no_results_to_display'|trans) }}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <nav class="pagination">
+            <div class="row">
+                <div class="col-md-5 text-md-left text-xs-center showing">
+                    {{ pagination.simple(resources.data) }}
+                </div>
+                <div class="col-md-7 text-md-right text-xs-center">
+                    <ul class="page-list clearfix text-xs-center">
+                        <li class="page-item  previous  ">
+                            <a rel="prev" href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;page=1" class="page-link disabled js-search-link">
+                                <i class="fa fa-angle-left"></i> <span>Previous</span>
+                            </a>
+                        </li>
+                        <li class="page-item active  ">
+                            <a rel="nofollow" href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;page=1" class="page-link disabled js-search-link">
+                                1
+                            </a>
+                        </li>
+                        <li class="page-item   ">
+                            <a rel="nofollow" href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;page=2" class="page-link js-search-link">
+                                2
+                            </a>
+                        </li>
+                        <li class="page-item  next  ">
+                            <a rel="next" href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/3-fashion?order=product.name.asc&amp;page=2" class="page-link js-search-link">
+                                <span>Next</span><i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="hidden-md-up text-xs-right up">
+            <a href="#header" class="btn btn-secondary">
+                Back to top
+                <i class="material-icons"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div id="js-product-list-bottom"></div>

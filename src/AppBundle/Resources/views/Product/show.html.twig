@@ -1,0 +1,586 @@
+{% extends '@SyliusShop/layout.html.twig' %}
+
+{% block content %}
+{% include '@SyliusShop/Product/Show/_breadcrumb.html.twig' %}
+
+<div class="container">
+<div class="row">
+<div id="content-wrapper" class="col-lg-12 col-xs-12">
+    <section id="main" itemscope="" itemtype="https://schema.org/Product">
+    <meta itemprop="url" content="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/home/2-7-blouse.html#/1-size-s/11-color-black">
+    <div class="row">
+        <div class="col-md-6">
+            <section class="page-content" id="content">
+                <div class="images-container">
+                    {% include '@SyliusShop/Product/Show/_images.html.twig' %}
+                </div>
+            </section>
+
+        </div>
+        <div class="col-md-6">
+            {% include '@SyliusShop/Product/Show/_header.html.twig' %}
+
+            {% if not product.variants.empty() %}
+                {% include '@SyliusShop/Product/Show/_price.html.twig' %}
+            {% endif %}
+
+            <div class="product-information">
+                <div class="product-actions">
+                    <form action="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/cart" method="post" id="add-to-cart-or-refresh">
+                        <input type="hidden" name="token" value="079962e2a9e2e861af4d7a4f1833a7d5">
+                        <input type="hidden" name="id_product" value="2" id="product_page_product_id">
+                        <input type="hidden" name="id_customization" value="0" id="product_customization_id">
+
+
+                        {% if product.isConfigurable() and product.getVariantSelectionMethod() == 'match' and not product.variants.empty() %}
+                            {% include '@SyliusShop/Product/Show/_variantsPricing.html.twig' with {'pricing': sylius_product_variant_prices(product, sylius.channel)} %}
+                        {% endif %}
+                        {% include '@SyliusShop/Product/Show/_inventory.html.twig' %}
+
+                        <section class="product-discounts">
+                        </section>
+                        <div class="social-sharing">
+                            <span>Share</span>
+                            <ul>
+                                <li class="facebook icon-gray"><a href="http://www.facebook.com/sharer.php?u=http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/home/2-blouse.html" class="text-hide" title="Share" target="_blank">Share</a></li>
+                                <li class="twitter icon-gray"><a href="https://twitter.com/intent/tweet?text=Blouse http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/home/2-blouse.html" class="text-hide" title="Tweet" target="_blank">Tweet</a></li>
+                                <li class="googleplus icon-gray"><a href="https://plus.google.com/share?url=http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/home/2-blouse.html" class="text-hide" title="Google+" target="_blank">Google+</a></li>
+                                <li class="pinterest icon-gray"><a href="http://www.pinterest.com/pin/create/button/?media=http://demo4leotheme.com/prestashop/leo_leblanc_demo/30/blouse.jpg&amp;url=http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/home/2-blouse.html" class="text-hide" title="Pinterest" target="_blank">Pinterest</a></li>
+                            </ul>
+                        </div>
+                        <input class="product-refresh ps-hidden-by-js" name="refresh" type="submit" value="Refresh" style="display: none;">
+                    </form>
+
+
+                </div>
+
+                <div id="block-reassurance">
+                    <ul>
+                        <li>
+                            <div class="block-reassurance-item">
+                                <img src="http://demo4leotheme.com/prestashop/leo_leblanc_demo/modules/blockreassurance/img/ic_verified_user_black_36dp_1x.png" alt="Security policy (edit with module Customer reassurance)">
+                                <span class="h6">Security policy (edit with module Customer reassurance)</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="block-reassurance-item">
+                                <img src="http://demo4leotheme.com/prestashop/leo_leblanc_demo/modules/blockreassurance/img/ic_local_shipping_black_36dp_1x.png" alt="Delivery policy (edit with module Customer reassurance)">
+                                <span class="h6">Delivery policy (edit with module Customer reassurance)</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="block-reassurance-item">
+                                <img src="http://demo4leotheme.com/prestashop/leo_leblanc_demo/modules/blockreassurance/img/ic_swap_horiz_black_36dp_1x.png" alt="Return policy (edit with module Customer reassurance)">
+                                <span class="h6">Return policy (edit with module Customer reassurance)</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="col-md-12 ">
+            <div class="tabs">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tab" href="#description">Description</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#product-details">Product Details</a>
+                    </li>
+                </ul>
+
+                <div class="tab-content" id="tab-content">
+                    <div class="tab-pane fade in active" id="description">
+
+                        <div class="product-description">
+                            {{ product.shortDescription }}
+                        </div>
+
+                    </div>
+                    <div class="tab-pane fade" id="product-details" data-product="{&quot;id_shop_default&quot;:&quot;1&quot;,&quot;id_manufacturer&quot;:&quot;2&quot;,&quot;id_supplier&quot;:&quot;1&quot;,&quot;reference&quot;:&quot;demo_2&quot;,&quot;supplier_reference&quot;:null,&quot;location&quot;:null,&quot;width&quot;:&quot;0.000000&quot;,&quot;height&quot;:&quot;0.000000&quot;,&quot;depth&quot;:&quot;0.000000&quot;,&quot;weight&quot;:&quot;0.000000&quot;,&quot;quantity_discount&quot;:&quot;0&quot;,&quot;ean13&quot;:null,&quot;isbn&quot;:null,&quot;upc&quot;:null,&quot;cache_is_pack&quot;:&quot;0&quot;,&quot;cache_has_attachments&quot;:&quot;0&quot;,&quot;is_virtual&quot;:&quot;0&quot;,&quot;state&quot;:&quot;1&quot;,&quot;id_category_default&quot;:&quot;2&quot;,&quot;id_tax_rules_group&quot;:&quot;1&quot;,&quot;on_sale&quot;:&quot;0&quot;,&quot;online_only&quot;:&quot;0&quot;,&quot;ecotax&quot;:{&quot;value&quot;:&quot;$0.00&quot;,&quot;amount&quot;:&quot;0.000000&quot;,&quot;rate&quot;:0},&quot;minimal_quantity&quot;:&quot;1&quot;,&quot;price&quot;:&quot;$26.99&quot;,&quot;wholesale_price&quot;:&quot;8.100000&quot;,&quot;unity&quot;:null,&quot;unit_price_ratio&quot;:&quot;0.000000&quot;,&quot;additional_shipping_cost&quot;:&quot;0.00&quot;,&quot;customizable&quot;:&quot;0&quot;,&quot;text_fields&quot;:&quot;0&quot;,&quot;uploadable_files&quot;:&quot;0&quot;,&quot;redirect_type&quot;:&quot;404&quot;,&quot;id_product_redirected&quot;:&quot;0&quot;,&quot;available_for_order&quot;:&quot;1&quot;,&quot;available_date&quot;:null,&quot;show_condition&quot;:&quot;0&quot;,&quot;condition&quot;:false,&quot;show_price&quot;:true,&quot;indexed&quot;:&quot;1&quot;,&quot;visibility&quot;:&quot;both&quot;,&quot;cache_default_attribute&quot;:&quot;7&quot;,&quot;advanced_stock_management&quot;:&quot;0&quot;,&quot;date_add&quot;:&quot;2016-11-14 03:35:57&quot;,&quot;date_upd&quot;:&quot;2016-11-14 03:08:26&quot;,&quot;pack_stock_type&quot;:&quot;3&quot;,&quot;meta_description&quot;:null,&quot;meta_keywords&quot;:null,&quot;meta_title&quot;:null,&quot;link_rewrite&quot;:&quot;blouse&quot;,&quot;name&quot;:&quot;Blouse&quot;,&quot;description&quot;:&quot;<p>Lorem ipsum dolor sit amet, cum id viris dolorum sadipscing, an sit luptatum ocurreret, cu inani iuvaret contentiones mea. Ex mel lorem scaevola, eum purto ponderum et, eum cibo partem ignota at. In soleat libris constituam his, usu an cibo posse debitis. Etiam assentior nec ut. Usu no harum scaevola indoctum, admodum delectus evertitur eu mei. Ei voluptua phaedrum definiebas has, diceret numquam consetetur mei in.<\/p>\r\n<p><\/p>\r\n<p>Vidit fabellas conclusionemque vel no, sonet dolor populo at usu. Graeci consectetuer at quo, ad vidisse reprimique voluptatibus sit, et affert deleniti scripserit vis. Ex est rebum sonet, vocent detraxit moderatius mea ex. Mel id democritum adversarium. Per ne accumsan suscipit. Vivendo percipit neglegentur ut vim, labitur insolens adipiscing his ad.<\/p>&quot;,&quot;description_short&quot;:&quot;<p>Detracto deterruisset pro an. Graeco interesset nam te, vim et oporteat recusabo. Ex eam fastidii percipitur, verear consequat voluptatum ex per, vel saepe nemore appareat ut.<\/p>&quot;,&quot;available_now&quot;:null,&quot;available_later&quot;:null,&quot;id&quot;:2,&quot;id_product&quot;:2,&quot;out_of_stock&quot;:2,&quot;new&quot;:1,&quot;id_product_attribute&quot;:7,&quot;quantity_wanted&quot;:1,&quot;extraContent&quot;:[],&quot;allow_oosp&quot;:0,&quot;category&quot;:&quot;home&quot;,&quot;category_name&quot;:&quot;Home&quot;,&quot;link&quot;:&quot;http:\/\/demo4leotheme.com\/prestashop\/leo_leblanc_demo\/en\/home\/2-blouse.html&quot;,&quot;attribute_price&quot;:0,&quot;price_tax_exc&quot;:26.99,&quot;price_without_reduction&quot;:26.99,&quot;reduction&quot;:0,&quot;specific_prices&quot;:false,&quot;quantity&quot;:298,&quot;quantity_all_versions&quot;:1798,&quot;id_image&quot;:&quot;en-default&quot;,&quot;features&quot;:[{&quot;name&quot;:&quot;Compositions&quot;,&quot;value&quot;:&quot;Cotton&quot;,&quot;id_feature&quot;:&quot;5&quot;},{&quot;name&quot;:&quot;Styles&quot;,&quot;value&quot;:&quot;Casual&quot;,&quot;id_feature&quot;:&quot;6&quot;},{&quot;name&quot;:&quot;Properties&quot;,&quot;value&quot;:&quot;Short Sleeve&quot;,&quot;id_feature&quot;:&quot;7&quot;}],&quot;attachments&quot;:[],&quot;virtual&quot;:0,&quot;pack&quot;:0,&quot;packItems&quot;:[],&quot;nopackprice&quot;:0,&quot;customization_required&quot;:false,&quot;attributes&quot;:{&quot;1&quot;:{&quot;id_attribute&quot;:&quot;1&quot;,&quot;id_attribute_group&quot;:&quot;1&quot;,&quot;name&quot;:&quot;S&quot;,&quot;group&quot;:&quot;Size&quot;,&quot;reference&quot;:null,&quot;ean13&quot;:null,&quot;isbn&quot;:null,&quot;upc&quot;:null},&quot;3&quot;:{&quot;id_attribute&quot;:&quot;11&quot;,&quot;id_attribute_group&quot;:&quot;3&quot;,&quot;name&quot;:&quot;Black&quot;,&quot;group&quot;:&quot;Color&quot;,&quot;reference&quot;:null,&quot;ean13&quot;:null,&quot;isbn&quot;:null,&quot;upc&quot;:null}},&quot;rate&quot;:0,&quot;tax_name&quot;:&quot;&quot;,&quot;ecotax_rate&quot;:0,&quot;unit_price&quot;:&quot;&quot;,&quot;customizations&quot;:{&quot;fields&quot;:[]},&quot;id_customization&quot;:0,&quot;is_customizable&quot;:false,&quot;show_quantities&quot;:true,&quot;quantity_label&quot;:&quot;Items&quot;,&quot;quantity_discounts&quot;:[],&quot;customer_group_discount&quot;:0,&quot;weight_unit&quot;:&quot;kg&quot;,&quot;images&quot;:[{&quot;bySize&quot;:{&quot;cart_default&quot;:{&quot;url&quot;:&quot;http:\/\/demo4leotheme.com\/prestashop\/leo_leblanc_demo\/30-cart_default\/blouse.jpg&quot;,&quot;width&quot;:80,&quot;height&quot;:101},&quot;small_default&quot;:{&quot;url&quot;:&quot;http:\/\/demo4leotheme.com\/prestashop\/leo_leblanc_demo\/30-small_default\/blouse.jpg&quot;,&quot;width&quot;:100,&quot;height&quot;:126},&quot;medium_default&quot;:{&quot;url&quot;:&quot;http:\/\/demo4leotheme.com\/prestashop\/leo_leblanc_demo\/30-medium_default\/blouse.jpg&quot;,&quot;width&quot;:300,&quot;height&quot;:378},&quot;home_default&quot;:{&quot;url&quot;:&quot;http:\/\/demo4leotheme.com\/prestashop\/leo_leblanc_demo\/30-home_default\/blouse.jpg&quot;,&quot;width&quot;:450,&quot;height&quot;:567},&quot;large_default&quot;:{&quot;url&quot;:&quot;http:\/\/demo4leotheme.com\/prestashop\/leo_leblanc_demo\/30-large_default\/blouse.jpg&quot;,&quot;width&quot;:1000,&quot;height&quot;:1260}},&quot;small&quot;:{&quot;url&quot;:&quot;http:\/\/demo4leotheme.com\/prestashop\/leo_leblanc_demo\/30-cart_default\/blouse.jpg&quot;,&quot;width&quot;:80,&quot;height&quot;:101},&quot;medium&quot;:{&quot;url&quot;:&quot;http:\/\/demo4leotheme.com\/prestashop\/leo_leblanc_demo\/30-medium_default\/blouse.jpg&quot;,&quot;width&quot;:300,&quot;height&quot;:378},&quot;large&quot;:{&quot;url&quot;:&quot;http:\/\/demo4leotheme.com\/prestashop\/leo_leblanc_demo\/30-large_default\/blouse.jpg&quot;,&quot;width&quot;:1000,&quot;height&quot;:1260},&quot;legend&quot;:null,&quot;cover&quot;:&quot;1&quot;,&quot;id_image&quot;:&quot;30&quot;,&quot;position&quot;:&quot;1&quot;,&quot;associatedVariants&quot;:[&quot;7&quot;]}],&quot;cover&quot;:{&quot;bySize&quot;:{&quot;cart_default&quot;:{&quot;url&quot;:&quot;http:\/\/demo4leotheme.com\/prestashop\/leo_leblanc_demo\/30-cart_default\/blouse.jpg&quot;,&quot;width&quot;:80,&quot;height&quot;:101},&quot;small_default&quot;:{&quot;url&quot;:&quot;http:\/\/demo4leotheme.com\/prestashop\/leo_leblanc_demo\/30-small_default\/blouse.jpg&quot;,&quot;width&quot;:100,&quot;height&quot;:126},&quot;medium_default&quot;:{&quot;url&quot;:&quot;http:\/\/demo4leotheme.com\/prestashop\/leo_leblanc_demo\/30-medium_default\/blouse.jpg&quot;,&quot;width&quot;:300,&quot;height&quot;:378},&quot;home_default&quot;:{&quot;url&quot;:&quot;http:\/\/demo4leotheme.com\/prestashop\/leo_leblanc_demo\/30-home_default\/blouse.jpg&quot;,&quot;width&quot;:450,&quot;height&quot;:567},&quot;large_default&quot;:{&quot;url&quot;:&quot;http:\/\/demo4leotheme.com\/prestashop\/leo_leblanc_demo\/30-large_default\/blouse.jpg&quot;,&quot;width&quot;:1000,&quot;height&quot;:1260}},&quot;small&quot;:{&quot;url&quot;:&quot;http:\/\/demo4leotheme.com\/prestashop\/leo_leblanc_demo\/30-cart_default\/blouse.jpg&quot;,&quot;width&quot;:80,&quot;height&quot;:101},&quot;medium&quot;:{&quot;url&quot;:&quot;http:\/\/demo4leotheme.com\/prestashop\/leo_leblanc_demo\/30-medium_default\/blouse.jpg&quot;,&quot;width&quot;:300,&quot;height&quot;:378},&quot;large&quot;:{&quot;url&quot;:&quot;http:\/\/demo4leotheme.com\/prestashop\/leo_leblanc_demo\/30-large_default\/blouse.jpg&quot;,&quot;width&quot;:1000,&quot;height&quot;:1260},&quot;legend&quot;:null,&quot;cover&quot;:&quot;1&quot;,&quot;id_image&quot;:&quot;30&quot;,&quot;position&quot;:&quot;1&quot;,&quot;associatedVariants&quot;:[&quot;7&quot;]},&quot;url&quot;:&quot;http:\/\/demo4leotheme.com\/prestashop\/leo_leblanc_demo\/en\/home\/2-7-blouse.html#\/1-size-s\/11-color-black&quot;,&quot;canonical_url&quot;:&quot;http:\/\/demo4leotheme.com\/prestashop\/leo_leblanc_demo\/en\/home\/2-blouse.html&quot;,&quot;has_discount&quot;:false,&quot;discount_type&quot;:null,&quot;discount_percentage&quot;:null,&quot;discount_percentage_absolute&quot;:null,&quot;discount_amount&quot;:null,&quot;price_amount&quot;:26.99,&quot;regular_price_amount&quot;:26.99,&quot;regular_price&quot;:&quot;$26.99&quot;,&quot;unit_price_full&quot;:&quot;&quot;,&quot;add_to_cart_url&quot;:&quot;http:\/\/demo4leotheme.com\/prestashop\/leo_leblanc_demo\/en\/cart?add=1&amp;id_product=2&amp;id_product_attribute=7&amp;token=079962e2a9e2e861af4d7a4f1833a7d5&quot;,&quot;main_variants&quot;:[{&quot;id_product_attribute&quot;:8,&quot;texture&quot;:&quot;&quot;,&quot;id_product&quot;:&quot;2&quot;,&quot;name&quot;:&quot;White&quot;,&quot;add_to_cart_url&quot;:&quot;http:\/\/demo4leotheme.com\/prestashop\/leo_leblanc_demo\/en\/cart?add=1&amp;id_product=2&amp;id_product_attribute=8&amp;token=079962e2a9e2e861af4d7a4f1833a7d5&quot;,&quot;url&quot;:&quot;http:\/\/demo4leotheme.com\/prestashop\/leo_leblanc_demo\/en\/home\/2-8-blouse.html#\/1-size-s\/8-color-white&quot;,&quot;type&quot;:&quot;color&quot;,&quot;html_color_code&quot;:&quot;#ffffff&quot;},{&quot;id_product_attribute&quot;:7,&quot;texture&quot;:&quot;&quot;,&quot;id_product&quot;:&quot;2&quot;,&quot;name&quot;:&quot;Black&quot;,&quot;add_to_cart_url&quot;:&quot;http:\/\/demo4leotheme.com\/prestashop\/leo_leblanc_demo\/en\/cart?add=1&amp;id_product=2&amp;id_product_attribute=7&amp;token=079962e2a9e2e861af4d7a4f1833a7d5&quot;,&quot;url&quot;:&quot;http:\/\/demo4leotheme.com\/prestashop\/leo_leblanc_demo\/en\/home\/2-7-blouse.html#\/1-size-s\/11-color-black&quot;,&quot;type&quot;:&quot;color&quot;,&quot;html_color_code&quot;:&quot;#434A54&quot;}],&quot;flags&quot;:{&quot;new&quot;:{&quot;type&quot;:&quot;new&quot;,&quot;label&quot;:&quot;New&quot;}},&quot;labels&quot;:{&quot;tax_short&quot;:&quot;(tax excl.)&quot;,&quot;tax_long&quot;:&quot;Tax excluded&quot;},&quot;show_availability&quot;:true,&quot;availability_date&quot;:null,&quot;availability_message&quot;:null,&quot;availability&quot;:&quot;available&quot;,&quot;reference_to_display&quot;:&quot;demo_2&quot;,&quot;embedded_attributes&quot;:{&quot;id_shop_default&quot;:&quot;1&quot;,&quot;id_manufacturer&quot;:&quot;2&quot;,&quot;id_supplier&quot;:&quot;1&quot;,&quot;reference&quot;:&quot;demo_2&quot;,&quot;is_virtual&quot;:&quot;0&quot;,&quot;id_category_default&quot;:&quot;2&quot;,&quot;on_sale&quot;:&quot;0&quot;,&quot;online_only&quot;:&quot;0&quot;,&quot;ecotax&quot;:&quot;0.000000&quot;,&quot;minimal_quantity&quot;:&quot;1&quot;,&quot;price&quot;:26.99,&quot;unity&quot;:null,&quot;unit_price_ratio&quot;:&quot;0.000000&quot;,&quot;additional_shipping_cost&quot;:&quot;0.00&quot;,&quot;customizable&quot;:&quot;0&quot;,&quot;text_fields&quot;:&quot;0&quot;,&quot;uploadable_files&quot;:&quot;0&quot;,&quot;redirect_type&quot;:&quot;404&quot;,&quot;id_product_redirected&quot;:&quot;0&quot;,&quot;available_for_order&quot;:&quot;1&quot;,&quot;available_date&quot;:null,&quot;show_condition&quot;:&quot;0&quot;,&quot;condition&quot;:&quot;new&quot;,&quot;show_price&quot;:&quot;1&quot;,&quot;indexed&quot;:&quot;1&quot;,&quot;visibility&quot;:&quot;both&quot;,&quot;cache_default_attribute&quot;:&quot;7&quot;,&quot;advanced_stock_management&quot;:&quot;0&quot;,&quot;date_add&quot;:&quot;2016-11-14 03:35:57&quot;,&quot;date_upd&quot;:&quot;2016-11-14 03:08:26&quot;,&quot;pack_stock_type&quot;:&quot;3&quot;,&quot;meta_description&quot;:null,&quot;meta_keywords&quot;:null,&quot;meta_title&quot;:null,&quot;link_rewrite&quot;:&quot;blouse&quot;,&quot;name&quot;:&quot;Blouse&quot;,&quot;description&quot;:&quot;<p>Lorem ipsum dolor sit amet, cum id viris dolorum sadipscing, an sit luptatum ocurreret, cu inani iuvaret contentiones mea. Ex mel lorem scaevola, eum purto ponderum et, eum cibo partem ignota at. In soleat libris constituam his, usu an cibo posse debitis. Etiam assentior nec ut. Usu no harum scaevola indoctum, admodum delectus evertitur eu mei. Ei voluptua phaedrum definiebas has, diceret numquam consetetur mei in.<\/p>\r\n<p><\/p>\r\n<p>Vidit fabellas conclusionemque vel no, sonet dolor populo at usu. Graeci consectetuer at quo, ad vidisse reprimique voluptatibus sit, et affert deleniti scripserit vis. Ex est rebum sonet, vocent detraxit moderatius mea ex. Mel id democritum adversarium. Per ne accumsan suscipit. Vivendo percipit neglegentur ut vim, labitur insolens adipiscing his ad.<\/p>&quot;,&quot;description_short&quot;:&quot;<p>Detracto deterruisset pro an. Graeco interesset nam te, vim et oporteat recusabo. Ex eam fastidii percipitur, verear consequat voluptatum ex per, vel saepe nemore appareat ut.<\/p>&quot;,&quot;available_now&quot;:null,&quot;available_later&quot;:null,&quot;id&quot;:2,&quot;id_product&quot;:2,&quot;out_of_stock&quot;:2,&quot;new&quot;:1,&quot;id_product_attribute&quot;:7,&quot;quantity_wanted&quot;:1,&quot;extraContent&quot;:[],&quot;allow_oosp&quot;:0,&quot;category&quot;:&quot;home&quot;,&quot;category_name&quot;:&quot;Home&quot;,&quot;link&quot;:&quot;http:\/\/demo4leotheme.com\/prestashop\/leo_leblanc_demo\/en\/home\/2-blouse.html&quot;,&quot;attribute_price&quot;:0,&quot;price_tax_exc&quot;:26.99,&quot;price_without_reduction&quot;:26.99,&quot;reduction&quot;:0,&quot;specific_prices&quot;:false,&quot;quantity&quot;:298,&quot;quantity_all_versions&quot;:1798,&quot;id_image&quot;:&quot;en-default&quot;,&quot;features&quot;:[{&quot;name&quot;:&quot;Compositions&quot;,&quot;value&quot;:&quot;Cotton&quot;,&quot;id_feature&quot;:&quot;5&quot;},{&quot;name&quot;:&quot;Styles&quot;,&quot;value&quot;:&quot;Casual&quot;,&quot;id_feature&quot;:&quot;6&quot;},{&quot;name&quot;:&quot;Properties&quot;,&quot;value&quot;:&quot;Short Sleeve&quot;,&quot;id_feature&quot;:&quot;7&quot;}],&quot;attachments&quot;:[],&quot;virtual&quot;:0,&quot;pack&quot;:0,&quot;packItems&quot;:[],&quot;nopackprice&quot;:0,&quot;customization_required&quot;:false,&quot;attributes&quot;:{&quot;1&quot;:{&quot;id_attribute&quot;:&quot;1&quot;,&quot;id_attribute_group&quot;:&quot;1&quot;,&quot;name&quot;:&quot;S&quot;,&quot;group&quot;:&quot;Size&quot;,&quot;reference&quot;:null,&quot;ean13&quot;:null,&quot;isbn&quot;:null,&quot;upc&quot;:null},&quot;3&quot;:{&quot;id_attribute&quot;:&quot;11&quot;,&quot;id_attribute_group&quot;:&quot;3&quot;,&quot;name&quot;:&quot;Black&quot;,&quot;group&quot;:&quot;Color&quot;,&quot;reference&quot;:null,&quot;ean13&quot;:null,&quot;isbn&quot;:null,&quot;upc&quot;:null}},&quot;rate&quot;:0,&quot;tax_name&quot;:&quot;&quot;,&quot;ecotax_rate&quot;:0,&quot;unit_price&quot;:0,&quot;customizations&quot;:{&quot;fields&quot;:[]},&quot;id_customization&quot;:0,&quot;is_customizable&quot;:false,&quot;show_quantities&quot;:true,&quot;quantity_label&quot;:&quot;Items&quot;,&quot;quantity_discounts&quot;:[],&quot;customer_group_discount&quot;:0}}">
+
+                        <div class="product-manufacturer">
+                            <a href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/2_manufacturers-2">
+                                <img src="http://demo4leotheme.com/prestashop/leo_leblanc_demo/img/m/2.jpg" class="img img-thumbnail manufacturer-logo">
+                            </a>
+                        </div>
+                        <div class="product-reference">
+                            <label class="label">Reference </label>
+                            <span itemprop="sku">demo_2</span>
+                        </div>
+                        <div class="product-quantities">
+                            <label class="label">In stock</label>
+                            <span>298 Items</span>
+                        </div>
+                        <section class="product-features">
+                            <h3 class="h6">Data sheet</h3>
+                            <dl class="data-sheet">
+                                <dt class="name">Compositions</dt>
+                                <dd class="value">Cotton</dd>
+                                <dt class="name">Styles</dt>
+                                <dd class="value">Casual</dd>
+                                <dt class="name">Properties</dt>
+                                <dd class="value">Short Sleeve</dd>
+                            </dl>
+                        </section>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="category-products block clearfix">
+    <h2 class="products-section-title">Related products</h2>
+    <p class="count-same-category">
+        (There are 14 other products in the same category)
+    </p>
+    <div class="block_content">
+    <div class="products">
+    <div class="owl-row">
+    <div id="category-products" class="owl-carousel owl-theme">
+    <div class="owl-wrapper-outer">
+    <div class="owl-wrapper" style="width: 8400px; display: block;">
+    <div class="owl-item active" style="width: 300px;"><div class="item first">
+            <article class="product-miniature js-product-miniature" data-id-product="10" data-id-product-attribute="59" itemscope="" itemtype="http://schema.org/Product">
+                <div class="thumbnail-container">
+                    <div class="product-image">
+                        <!-- @file modulesappagebuilderviewstemplatesfrontproductsfile_tpl -->
+
+                        <a href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/home/10-59-printed-summer-dress.html#/3-size-l/16-color-yellow" class="thumbnail product-thumbnail">
+                            <img class="img-fluid" src="http://demo4leotheme.com/prestashop/leo_leblanc_demo/57-home_default/printed-summer-dress.jpg" alt="" data-full-size-image-url="http://demo4leotheme.com/prestashop/leo_leblanc_demo/57-large_default/printed-summer-dress.jpg">
+                            <span class="product-additional" data-idproduct="10"><img class="img-fluid" title="Printed Summer Jean" alt="Printed Summer Jean" src="http://demo4leotheme.com/prestashop/leo_leblanc_demo/56-home_default/printed-summer-dress.jpg" width="450" height="567"></span>
+                        </a>
+                        <!-- @file modulesappagebuilderviewstemplatesfrontproductsfile_tpl -->
+                        <div class="quickview hidden-sm-down">
+                            <a href="#" class="quick-view" data-link-action="quickview">
+                                <i class="material-icons search"></i> Quick view
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product-meta">
+                        <!-- @file modules\appagebuilder\views\templates\front\products\file_tpl -->
+
+                        <h1 class="h3 product-title" itemprop="name"><a href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/home/10-59-printed-summer-dress.html#/3-size-l/16-color-yellow">Printed Summer Jean</a></h1>
+
+
+                        <!-- @file modulesappagebuilderviewstemplatesfrontproductsfile_tpl -->
+
+                        <div class="product-price-and-shipping">
+              <span class="price" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+                <span itemprop="priceCurrency" content="USD"></span><span itemprop="price" content="73.5">$73.50</span>
+              </span>
+                        </div>
+                        <div class="product-description-short" itemprop="description"><p>Detracto deterruisset pro an. Graeco interesset nam te, vim et oporteat recusabo. Ex eam fastidii percipitur, verear consequat voluptatum ex...</p></div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+    <div class="owl-item" style="width: 300px;"><div class="item first">
+
+
+            <article class="product-miniature js-product-miniature" data-id-product="7" data-id-product-attribute="34" itemscope="" itemtype="http://schema.org/Product">
+                <div class="thumbnail-container">
+                    <div class="product-image">
+                        <!-- @file modulesappagebuilderviewstemplatesfrontproductsfile_tpl -->
+
+                        <a href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/home/7-34-printed-chiffon-dress.html#/1-size-s/16-color-yellow" class="thumbnail product-thumbnail">
+                            <img class="img-fluid" src="http://demo4leotheme.com/prestashop/leo_leblanc_demo/40-home_default/printed-chiffon-dress.jpg" alt="" data-full-size-image-url="http://demo4leotheme.com/prestashop/leo_leblanc_demo/40-large_default/printed-chiffon-dress.jpg">
+                            <span class="product-additional" data-idproduct="7"><img class="img-fluid" title="Printed Chiffon Dress" alt="Printed Chiffon Dress" src="http://demo4leotheme.com/prestashop/leo_leblanc_demo/40-home_default/printed-chiffon-dress.jpg" width="450" height="567"></span>
+                        </a>
+                        <!-- @file modulesappagebuilderviewstemplatesfrontproductsfile_tpl -->
+                        <div class="quickview hidden-sm-down">
+                            <a href="#" class="quick-view" data-link-action="quickview">
+                                <i class="material-icons search"></i> Quick view
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product-meta">
+                        <!-- @file modules\appagebuilder\views\templates\front\products\file_tpl -->
+
+                        <h1 class="h3 product-title" itemprop="name"><a href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/home/7-34-printed-chiffon-dress.html#/1-size-s/16-color-yellow">Printed Chiffon Dress</a></h1>
+
+
+                        <!-- @file modulesappagebuilderviewstemplatesfrontproductsfile_tpl -->
+
+                        <div class="product-price-and-shipping">
+              <span class="price" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+                <span itemprop="priceCurrency" content="USD"></span><span itemprop="price" content="16.4">$16.40</span>
+              </span>
+
+                            <span class="regular-price">$20.50</span>
+                            <span class="discount-percentage">-20%</span>
+                        </div>
+
+
+
+                        <div class="product-description-short" itemprop="description"><p>Detracto deterruisset pro an. Graeco interesset nam te, vim et oporteat recusabo. Ex eam fastidii percipitur, verear consequat voluptatum ex...</p></div>
+                    </div>
+                </div>
+            </article>
+
+
+        </div></div>
+
+    </div>
+    </div>
+    <div class="owl-controls clickable">
+        <div class="owl-buttons"><div class="owl-prev">‹</div><div class="owl-next">›</div></div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+    <script type="text/javascript">
+
+        products_list_functions.push(
+                function(){
+                    $('#category-products').owlCarousel({
+                        direction:'ltr',
+                        items : 4,
+                        itemsCustom : false,
+                        itemsDesktop : [1200, 4],
+                        itemsDesktopSmall : [992, 3],
+                        itemsTablet : [768, 2],
+                        itemsTabletSmall : false,
+                        itemsMobile : [480, 1],
+                        singleItem : false,         // true : show only 1 item
+                        itemsScaleUp : false,
+                        slideSpeed : 200,  //  change speed when drag and drop a item
+                        paginationSpeed :800, // change speed when go next page
+
+                        autoPlay : false,   // time to show each item
+                        stopOnHover : false,
+                        navigation : true,
+                        navigationText : ["&lsaquo;", "&rsaquo;"],
+
+                        scrollPerPage :false,
+                        responsive :true,
+
+                        pagination : false,
+                        paginationNumbers : false,
+
+                        addClassActive : true,
+
+                        mouseDrag : true,
+                        touchDrag : true,
+
+                    });
+                }
+        );
+
+    </script><section class="viewed-products block clearfix">
+    <h2 class="products-section-title">
+        Viewed products
+    </h2>
+    <div class="block_content">
+    <div class="products">
+    <div class="owl-row">
+    <div id="viewed-products" class="owl-carousel owl-theme">
+
+    <div class="owl-wrapper-outer"><div class="owl-wrapper" style="width: 2400px; display: block;"><div class="owl-item active" style="width: 300px;"><div class="item first">
+
+
+            <article class="product-miniature js-product-miniature" data-id-product="1" data-id-product-attribute="5" itemscope="" itemtype="http://schema.org/Product">
+                <div class="thumbnail-container">
+                    <div class="product-image">
+                        <!-- @file modulesappagebuilderviewstemplatesfrontproductsfile_tpl -->
+
+                        <a href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/home/1-5-faded-short-sleeves-tshirt.html#/3-size-l/13-color-orange" class="thumbnail product-thumbnail">
+                            <img class="img-fluid" src="http://demo4leotheme.com/prestashop/leo_leblanc_demo/25-home_default/faded-short-sleeves-tshirt.jpg" alt="" data-full-size-image-url="http://demo4leotheme.com/prestashop/leo_leblanc_demo/25-large_default/faded-short-sleeves-tshirt.jpg">
+                            <span class="product-additional" data-idproduct="1"><img class="img-fluid" title="Shoes Short Sleeves" alt="Shoes Short Sleeves" src="http://demo4leotheme.com/prestashop/leo_leblanc_demo/24-home_default/faded-short-sleeves-tshirt.jpg" width="450" height="567"></span>
+                        </a>
+
+
+
+                        <!-- @file modulesappagebuilderviewstemplatesfrontproductsfile_tpl -->
+                        <div class="quickview hidden-sm-down">
+                            <a href="#" class="quick-view" data-link-action="quickview">
+                                <i class="material-icons search"></i> Quick view
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product-meta">
+                        <!-- @file modules\appagebuilder\views\templates\front\products\file_tpl -->
+
+                        <h1 class="h3 product-title" itemprop="name"><a href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/home/1-5-faded-short-sleeves-tshirt.html#/3-size-l/13-color-orange">Shoes Short Sleeves</a></h1>
+
+
+                        <!-- @file modulesappagebuilderviewstemplatesfrontproductsfile_tpl -->
+
+                        <div class="product-price-and-shipping">
+              <span class="price" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+                <span itemprop="priceCurrency" content="USD"></span><span itemprop="price" content="15.68">$15.68</span>
+              </span>
+
+
+
+                            <span class="regular-price">$16.51</span>
+                            <span class="discount-percentage">-5%</span>
+                        </div>
+
+
+
+                        <div class="product-description-short" itemprop="description"><p>Detracto deterruisset pro an. Graeco interesset nam te, vim et oporteat recusabo. Ex eam fastidii percipitur, verear consequat voluptatum ex...</p></div>
+                    </div>
+                </div>
+            </article>
+
+
+        </div></div>
+    <div class="owl-item active" style="width: 300px;"><div class="item first">
+
+
+            <article class="product-miniature js-product-miniature" data-id-product="3" data-id-product-attribute="13" itemscope="" itemtype="http://schema.org/Product">
+                <div class="thumbnail-container">
+                    <div class="product-image">
+                        <!-- @file modulesappagebuilderviewstemplatesfrontproductsfile_tpl -->
+
+                        <a href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/home/3-13-printed-dress.html#/1-size-s/13-color-orange" class="thumbnail product-thumbnail">
+                            <img class="img-fluid" src="http://demo4leotheme.com/prestashop/leo_leblanc_demo/33-home_default/printed-dress.jpg" alt="" data-full-size-image-url="http://demo4leotheme.com/prestashop/leo_leblanc_demo/33-large_default/printed-dress.jpg">
+                            <span class="product-additional" data-idproduct="3"><img class="img-fluid" title="Printed Dress" alt="Printed Dress" src="http://demo4leotheme.com/prestashop/leo_leblanc_demo/32-home_default/printed-dress.jpg" width="450" height="567"></span>
+                        </a>
+
+
+
+                        <!-- @file modulesappagebuilderviewstemplatesfrontproductsfile_tpl -->
+                        <div class="quickview hidden-sm-down">
+                            <a href="#" class="quick-view" data-link-action="quickview">
+                                <i class="material-icons search"></i> Quick view
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product-meta">
+                        <!-- @file modules\appagebuilder\views\templates\front\products\file_tpl -->
+
+                        <h1 class="h3 product-title" itemprop="name"><a href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/home/3-13-printed-dress.html#/1-size-s/13-color-orange">Printed Dress</a></h1>
+
+
+                        <!-- @file modulesappagebuilderviewstemplatesfrontproductsfile_tpl -->
+
+                        <div class="product-price-and-shipping">
+              <span class="price" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+                <span itemprop="priceCurrency" content="USD"></span><span itemprop="price" content="25.99">$25.99</span>
+              </span>
+
+
+
+
+
+
+
+                        </div>
+
+
+
+                        <div class="product-description-short" itemprop="description"><p>Detracto deterruisset pro an. Graeco interesset nam te, vim et oporteat recusabo. Ex eam fastidii percipitur, verear consequat voluptatum ex...</p></div>
+                    </div>
+                </div>
+            </article>
+
+
+        </div></div>
+    <div class="owl-item active" style="width: 300px;"><div class="item first">
+
+
+            <article class="product-miniature js-product-miniature" data-id-product="10" data-id-product-attribute="59" itemscope="" itemtype="http://schema.org/Product">
+                <div class="thumbnail-container">
+                    <div class="product-image">
+                        <!-- @file modulesappagebuilderviewstemplatesfrontproductsfile_tpl -->
+
+                        <a href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/home/10-59-printed-summer-dress.html#/3-size-l/16-color-yellow" class="thumbnail product-thumbnail">
+                            <img class="img-fluid" src="http://demo4leotheme.com/prestashop/leo_leblanc_demo/57-home_default/printed-summer-dress.jpg" alt="" data-full-size-image-url="http://demo4leotheme.com/prestashop/leo_leblanc_demo/57-large_default/printed-summer-dress.jpg">
+                            <span class="product-additional" data-idproduct="10"><img class="img-fluid" title="Printed Summer Jean" alt="Printed Summer Jean" src="http://demo4leotheme.com/prestashop/leo_leblanc_demo/56-home_default/printed-summer-dress.jpg" width="450" height="567"></span>
+                        </a>
+
+
+
+                        <!-- @file modulesappagebuilderviewstemplatesfrontproductsfile_tpl -->
+                        <div class="quickview hidden-sm-down">
+                            <a href="#" class="quick-view" data-link-action="quickview">
+                                <i class="material-icons search"></i> Quick view
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product-meta">
+                        <!-- @file modules\appagebuilder\views\templates\front\products\file_tpl -->
+
+                        <h1 class="h3 product-title" itemprop="name"><a href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/home/10-59-printed-summer-dress.html#/3-size-l/16-color-yellow">Printed Summer Jean</a></h1>
+
+
+                        <!-- @file modulesappagebuilderviewstemplatesfrontproductsfile_tpl -->
+
+                        <div class="product-price-and-shipping">
+              <span class="price" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+                <span itemprop="priceCurrency" content="USD"></span><span itemprop="price" content="73.5">$73.50</span>
+              </span>
+                        </div>
+                        <div class="product-description-short" itemprop="description"><p>Detracto deterruisset pro an. Graeco interesset nam te, vim et oporteat recusabo. Ex eam fastidii percipitur, verear consequat voluptatum ex...</p></div>
+                    </div>
+                </div>
+            </article>
+
+
+        </div></div>
+    <div class="owl-item active" style="width: 300px;"><div class="item first">
+            <article class="product-miniature js-product-miniature" data-id-product="8" data-id-product-attribute="51" itemscope="" itemtype="http://schema.org/Product">
+                <div class="thumbnail-container">
+                    <div class="product-image">
+                        <!-- @file modulesappagebuilderviewstemplatesfrontproductsfile_tpl -->
+
+                        <a href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/home/8-51-printed-chiffon-dress.html#/1-size-s/16-color-yellow" class="thumbnail product-thumbnail">
+                            <img class="img-fluid" src="http://demo4leotheme.com/prestashop/leo_leblanc_demo/44-home_default/printed-chiffon-dress.jpg" alt="" data-full-size-image-url="http://demo4leotheme.com/prestashop/leo_leblanc_demo/44-large_default/printed-chiffon-dress.jpg">
+                            <span class="product-additional" data-idproduct="8"><img class="img-fluid" title="Printed Dress Chiffon" alt="Printed Dress Chiffon" src="http://demo4leotheme.com/prestashop/leo_leblanc_demo/45-home_default/printed-chiffon-dress.jpg" width="450" height="567"></span>
+                        </a>
+                        <!-- @file modulesappagebuilderviewstemplatesfrontproductsfile_tpl -->
+                        <div class="quickview hidden-sm-down">
+                            <a href="#" class="quick-view" data-link-action="quickview">
+                                <i class="material-icons search"></i> Quick view
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product-meta">
+                        <!-- @file modules\appagebuilder\views\templates\front\products\file_tpl -->
+
+                        <h1 class="h3 product-title" itemprop="name"><a href="http://demo4leotheme.com/prestashop/leo_leblanc_demo/en/home/8-51-printed-chiffon-dress.html#/1-size-s/16-color-yellow">Printed Dress Chiffon</a></h1>
+
+
+                        <!-- @file modulesappagebuilderviewstemplatesfrontproductsfile_tpl -->
+
+                        <div class="product-price-and-shipping">
+              <span class="price" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+                <span itemprop="priceCurrency" content="USD"></span><span itemprop="price" content="19.6">$19.60</span>
+              </span>
+                            <span class="regular-price">$24.50</span>
+                            <span class="discount-percentage">-20%</span>
+                        </div>
+
+
+
+                        <div class="product-description-short" itemprop="description"><p>Detracto deterruisset pro an. Graeco interesset nam te, vim et oporteat recusabo. Ex eam fastidii percipitur, verear consequat voluptatum ex...</p></div>
+                    </div>
+                </div>
+            </article>
+
+
+        </div></div>
+    </div>
+    </div>
+
+
+
+    <div class="owl-controls clickable" style="display: none;">
+        <div class="owl-buttons"><div class="owl-prev">‹</div><div class="owl-next">›</div></div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+
+    <script type="text/javascript">
+        products_list_functions.push(
+                function(){
+                    $('#viewed-products').owlCarousel({
+                        direction:'ltr',
+                        items : 4,
+                        itemsCustom : false,
+                        itemsDesktop : [1200, 4],
+                        itemsDesktopSmall : [992, 3],
+                        itemsTablet : [768, 2],
+                        itemsTabletSmall : false,
+                        itemsMobile : [480, 1],
+                        singleItem : false,         // true : show only 1 item
+                        itemsScaleUp : false,
+                        slideSpeed : 200,  //  change speed when drag and drop a item
+                        paginationSpeed :800, // change speed when go next page
+
+                        autoPlay : false,   // time to show each item
+                        stopOnHover : false,
+                        navigation : true,
+                        navigationText : ["&lsaquo;", "&rsaquo;"],
+
+                        scrollPerPage :false,
+                        responsive :true,
+
+                        pagination : false,
+                        paginationNumbers : false,
+
+                        addClassActive : true,
+
+                        mouseDrag : true,
+                        touchDrag : true,
+
+                    });
+                }
+        );
+
+    </script>
+
+    <div class="modal fade js-product-images-modal" id="product-modal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <figure>
+                        <img class="js-modal-product-cover product-cover-modal" width="1000" src="http://demo4leotheme.com/prestashop/leo_leblanc_demo/30-large_default/blouse.jpg" alt="" title="" itemprop="image">
+                        <figcaption class="image-caption">
+
+                            <div id="product-description-short" itemprop="description"><p>Detracto deterruisset pro an. Graeco interesset nam te, vim et oporteat recusabo. Ex eam fastidii percipitur, verear consequat voluptatum ex per, vel saepe nemore appareat ut.</p></div>
+
+                        </figcaption>
+                    </figure>
+                    <aside id="thumbnails" class="thumbnails js-thumbnails text-xs-center">
+
+                        <div class="js-modal-mask mask  nomargin ">
+                            <ul class="product-images js-modal-product-images">
+                                <li class="thumb-container">
+                                    <img data-image-large-src="http://demo4leotheme.com/prestashop/leo_leblanc_demo/30-large_default/blouse.jpg" class="thumb js-modal-thumb" src="http://demo4leotheme.com/prestashop/leo_leblanc_demo/30-cart_default/blouse.jpg" alt="" title="" width="300" itemprop="image">
+                                </li>
+                            </ul>
+                        </div>
+
+                    </aside>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    </section>
+
+</div>
+    </div>
+</div>
+{#<div class="ui two column stackable grid">#}
+    {#<div class="column">#}
+        {#{% include '@SyliusShop/Product/Show/_images.html.twig' %}#}
+    {#</div>#}
+    {#<div class="column">#}
+        {#{% include '@SyliusShop/Product/Show/_header.html.twig' %}#}
+        {#{% include '@SyliusShop/Product/Show/_reviews.html.twig' %}#}
+        {#<div class="ui stackable grid">#}
+            {#<div class="four wide column">#}
+                {#{% if not product.variants.empty() %}#}
+                {#{% include '@SyliusShop/Product/Show/_price.html.twig' %}#}
+                {#{% endif %}#}
+            {#</div>#}
+            {#<div class="twelve wide right aligned column">#}
+                {#<span class="ui sub header">{{ product.code }}</span>#}
+            {#</div>#}
+        {#</div>#}
+        {#<div class="ui basic segment">#}
+            {#<p>{{ product.shortDescription }}</p>#}
+        {#</div>#}
+        {#{% if product.isConfigurable() and product.getVariantSelectionMethod() == 'match' and not product.variants.empty() %}#}
+            {#{% include '@SyliusShop/Product/Show/_variantsPricing.html.twig' with {'pricing': sylius_product_variant_prices(product, sylius.channel)} %}#}
+        {#{% endif %}#}
+        {#{% include '@SyliusShop/Product/Show/_inventory.html.twig' %}#}
+        {#<div class="ui hidden divider"></div>#}
+    {#</div>#}
+{#</div>#}
+{% include '@SyliusShop/Product/Show/_tabs.html.twig' %}
+{% include '@SyliusShop/Product/Show/_associations.html.twig' %}
+{% endblock %}

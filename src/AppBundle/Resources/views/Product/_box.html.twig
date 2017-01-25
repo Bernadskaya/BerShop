@@ -1,0 +1,34 @@
+{#здесь надо разобраться, зачем data-id-product="2" в описании к article. Возможно, влияет на карусель#}
+
+{% import "@SyliusShop/Common/Macro/money.html.twig" as money %}
+    <article class="product-miniature js-product-miniature" data-id-product="{{ loop.index }}" itemscope itemtype="http://schema.org/Product">
+        <div class="thumbnail-container">
+            <div class="product-image">
+                <!-- @file modulesappagebuilderviewstemplatesfrontproductsfile_tpl -->
+                <a href="{{ path('sylius_shop_product_show', {'slug': product.slug}) }}" class="thumbnail product-thumbnail">
+                    {% include '@SyliusShop/Product/_mainImage.html.twig' with {'product': product} %}
+                    <span class="product-additional" data-idproduct="2"></span>
+                </a>
+                <!-- @file modulesappagebuilderviewstemplatesfrontproductsfile_tpl -->
+                <div class="quickview hidden-sm-down">
+                    <a href="#" class="quick-view" data-link-action="quickview">
+                        <i class="material-icons search">&#xE8B6;</i> Quick view
+                    </a>
+                </div>
+            </div>
+            <div class="product-meta">
+                <!-- @file modules\appagebuilder\views\templates\front\products\file_tpl -->
+                <h1 class="h3 product-title" itemprop="name">
+                    <a href="{{ path('sylius_shop_product_show', {'slug': product.slug}) }}">{{ product.name }}</a>
+                </h1>
+                <div class="product-price-and-shipping">
+              <span class="price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                          {% if not product.variants.empty() %}
+                  <span itemprop="priceCurrency" content="USD"></span><span itemprop="price" content="26.99">{{ money.calculatePrice(product|sylius_resolve_variant) }}</span>
+                          {% endif %}
+              </span>
+                </div>
+                <div class="product-description-short" itemprop="description"><p>Detracto deterruisset pro an. Graeco interesset nam te, vim et oporteat recusabo. Ex eam fastidii percipitur, verear consequat voluptatum ex...</div>
+            </div>
+        </div>
+    </article>

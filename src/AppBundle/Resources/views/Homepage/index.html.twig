@@ -1,0 +1,105 @@
+{% extends '@SyliusShop/layout.html.twig' %}
+{% block id %}id="index"{% endblock %}
+
+{% block content %}
+    <div class="wrapper">
+        <div class="container">
+            <div class="row box-product-list ApRow  has-bg bg-boxed" data-bg=" no-repeat" style="background: no-repeat;">
+                <div    class="col-md-12 col-lg-12 col-xl-12  ApColumn ">
+                    <script type="text/javascript">
+                        ap_list_functions_loaded.push(function(){
+
+                            // ACTION SET ACTIVE
+                            $('#tab_2223212323 .nav a:eq(0)').trigger('click');
+
+                            $(document).ready(function() {
+                                $('#tab_2223212323 .nav a').click(function (e) {
+                                    e.preventDefault();
+                                    $(this).tab('show');
+                                });
+
+                                apTabHref = $('#tab_2223212323 .nav a:eq(0)').tab('show');
+
+
+                                ////js toggle tabs
+                                $('#tab_2223212323 ul.nav-tabs li').click(function(){
+                                    if($(this).hasClass('active'))
+                                    {
+                                        $('#tab_2223212323 .product-tab-option option').removeAttr('selected');
+                                        $('#tab_2223212323 .product-tab-option option.' + $(this).find('a').attr('class')).attr('selected','selected');
+                                    }
+                                });
+
+                                $('#tab_2223212323 .product-tab-option').change(function(){
+                                    var option_checked = $(this).find(':selected').attr('value');
+                                    $('#tab_2223212323 ul.nav-tabs li a[data-tab="' + option_checked + '"]').trigger('click');
+                                });
+                                ///
+
+                                //show tab when first load mobile
+                                $('#tab_2223212323 ul.nav-tabs li').each(function(){
+                                    if($(this).hasClass('active')){
+                                        $('#tab_2223212323 .product-tab-option option.' + $(this).find('a').attr('value')).attr('selected','selected');
+                                    }
+                                });
+                                //show option select when click tabs
+                                $('#tab_2223212323').on('show.bs.tab', function (e) {
+                                    var tab_active = $(e.target).data('tab');
+                                    var attr = $('#tab_2223212323 .product-tab-option option[value="' + tab_active + '"]').attr('selected');
+                                    if (typeof attr == typeof undefined && attr == false) {
+                                        $('#tab_2223212323 .product-tab-option option').removeAttr('selected');
+                                        $('#tab_2223212323 .product-tab-option option[value="' + tab_active + '"]').attr('selected','selected');
+                                    }
+
+                                });
+
+                            });
+                        });
+                    </script>
+                    <div class="block products_block exclusive appagebuilder ApProductCarousel">
+                        {#<div id="tab_2223212323" class="product-tabs tabs-top">#}
+                        <h4 class="title_block">
+                            {{ 'sylius.ui.latest_products'|trans }}
+                        </h4>
+                            {#<label class="box-select">#}
+                                {#<select class="product-tab-option">#}
+                                    {#<option value="tab_6389948458932283" selected="selected">New Arrivals </option>#}
+                                    {#<option value="tab_38082699356352265">Featured</option>#}
+                                    {#<option value="tab_8553789022321484">Best Seller</option>#}
+                                {#</select>#}
+                            {#</label>#}
+                            {#<ul class="nav nav-tabs" role="tablist">#}
+                                {#<li class="nav-item ">#}
+                                    {#<a href="#tab_6389948458932283" class="nav-link form_30174496362730135 active" role="tab" data-tab="tab_6389948458932283" data-toggle="tab" aria-expanded="true">#}
+                                        {#<span>New Arrivals </span>#}
+                                    {#</a>#}
+                                {#</li>#}
+                                {#<li class="nav-item ">#}
+                                    {#<a href="#tab_38082699356352265" class="nav-link form_4511021672138181" role="tab" data-tab="tab_38082699356352265" data-toggle="tab">#}
+                                        {#<span>Featured</span>#}
+                                    {#</a>#}
+                                {#</li>#}
+                                {#<li class="nav-item ">#}
+                                    {#<a href="#tab_8553789022321484" class="nav-link form_8775733785847586" role="tab" data-tab="tab_8553789022321484" data-toggle="tab">#}
+                                        {#<span>Best Seller</span>#}
+                                    {#</a>#}
+                                {#</li>#}
+                            {#</ul>#}
+                            <div class="clearfix"></div>
+                            <div class="block_content">
+                                {#<div class="tab-content">#}
+                                    {#<div id="tab_6389948458932283" class="tab-pane active" aria-expanded="true">#}
+                                        <div class="block products_block exclusive appagebuilder ApProductCarousel">
+                        {{ render(url('sylius_shop_partial_product_index_latest', {'count': 8, 'template': '@SyliusShop/Product/_horizontalList.html.twig'})) }}
+                                        </div>
+                                    {#</div>#}
+                            {#</div>#}
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

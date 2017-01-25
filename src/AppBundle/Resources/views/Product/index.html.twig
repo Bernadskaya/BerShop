@@ -1,0 +1,16 @@
+{% extends '@SyliusShop/layout.html.twig' %}
+
+{% block content %}
+    {% include '@SyliusShop/Product/Index/_breadcrumb.html.twig' %}
+    <div class="container">
+        <div class="row">
+            {% include '@SyliusShop/Product/Index/_sidebar.html.twig' %}
+            <div id="content-wrapper" class="left-column col-xs-12 col-sm-12 col-md-9">
+                {% include '@SyliusShop/Product/Index/_header.html.twig' %}
+                <section id="main">
+                    {% include '@SyliusShop/Product/Index/_main.html.twig' %}
+                </section>
+            </div>
+        </div>
+    </div>
+{% endblock %}

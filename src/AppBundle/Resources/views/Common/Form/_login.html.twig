@@ -1,0 +1,14 @@
+<div class="form-group row">
+    {{ form_errors(form.email) }}
+    <label class="col-md-3 form-control-label required">
+        {{ form_label(form.email) }}
+    </label>
+    {{ form_widget(form.email, {'attr':{'data-url': path('sylius_shop_ajax_user_check_action'),'class':'form-control col-md-6'}} ) }}
+</div>
+<div class="form-group row">
+    <label class="col-md-3 form-control-label required">
+    </label>
+    <input type="password" placeholder="{{ 'sylius.ui.password'|trans }}" class="form-control col-md-6" type="password">
+    <div class="col-md-3 form-control-comment" id="sylius-api-validation-error">
+    </div>
+</div>
